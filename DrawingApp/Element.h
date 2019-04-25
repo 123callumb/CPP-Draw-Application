@@ -8,43 +8,56 @@ class Element
 public:
 	Element(EasyGraphics* uiTool, BoundingRect bRect);
 	~Element();
+
 	inline void render(), click(int x, int y), hover(int x, int y);
+	inline void setCollisionRect(BoundingRect cRect); // Some elements may have a collision box different to their actual visual size.
+
+	inline BoundingRect getBoudingRect();
 protected:
-	virtual void onClick() = 0, onRender() = 0;
-	inline virtual void onHover(), offHover(); // This is incase we want to use the onHover with certain inheriters of the element
+	virtual void onClick(int x, int y) = 0, onRender() = 0;
+	inline virtual void onHover(int x, int y), offHover(int x, int y); // This is incase we want to use the onHover with certain inheriters of the element
 	bool hovering = false;
 	EasyGraphics *UI;
-	BoundingRect rect;
+	BoundingRect rect,  collisionRect; // Set by default just outside of the screen just incase
 };
 
 inline void Element::render() {
 	this->onRender();
 }
 
+inline void Element::setCollisionRect(BoundingRect cRect) {
+	collisionRect = cRect;
+}
+
+inline BoundingRect Element::getBoudingRect()
+{
+	return rect;
+}
+
 inline void Element::click(int x, int y) {
-	if (rect.isInside(x, y)) {
-		this->onClick();
+	if (collisionRect.isInside(x, y)) {
+		this->onClick(x, y);
 		this->onRender();
 	}
 }
 
 inline void Element::hover(int x, int y) {
-	if (rect.isInside(x, y)) {
+	if (collisionRect.isInside(x, y)) {
 		hovering = true;
-		this->onHover();
+		this->onHover(x, y);
 	}
 	else if (hovering) {
 		hovering = false;
-		this->offHover();
+		this->offHover(x, y);
 	}
 }
 
-inline void Element::offHover()
+inline void Element::offHover(int x, int y)
 {
 	this->onRender();
 }
 
-inline void Element::onHover()
+inline void Element::onHover(int x, int y)
 {
 	this->onRender();
 }

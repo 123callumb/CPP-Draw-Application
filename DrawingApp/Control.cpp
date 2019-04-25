@@ -10,9 +10,9 @@ Control::~Control()
 }
 
 
-void Control::onClick()
+void Control::onClick(int x, int y)
 {
-	selected = !selected;
+	selected = selected ? 0 : 1; /// er this may work with just !selected
 }
 
 void Control::onRender()

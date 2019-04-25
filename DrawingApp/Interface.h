@@ -1,7 +1,6 @@
 #pragma once
 #include "EasyGraphics.h"
-#include <vector>
-#include "Control.h"
+#include "MenuUI.h"
 using namespace std;
 
 
@@ -13,12 +12,11 @@ public:
 	Interface(HINSTANCE hInstance);
 	~Interface();
 private:
-	vector<Control> controls;
+	MenuUI controlMenu;
 
 	void onCreate();
 	void onDraw();
 	void onMouseMove(UINT nFlags, int x, int y);
 	void onLButtonDown(UINT nFlags, int x, int y);
-
 };
 

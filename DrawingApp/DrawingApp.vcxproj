@@ -147,23 +147,31 @@
   <ItemGroup>
     <ClInclude Include="BoundingRect.h" />
     <ClInclude Include="Control.h" />
+    <ClInclude Include="ControlExpand.h" />
     <ClInclude Include="EasyGraphics.h" />
     <ClInclude Include="Element.h" />
     <ClInclude Include="Interface.h" />
+    <ClInclude Include="MenuUI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BoundingRect.cpp" />
     <ClCompile Include="Control.cpp" />
+    <ClCompile Include="ControlExpand.cpp" />
     <ClCompile Include="EasyGraphics.cpp" />
     <ClCompile Include="Element.cpp" />
     <ClCompile Include="Interface.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MenuUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Btn_Bin.bmp" />
     <Image Include="Btn_Bin_Hover.bmp" />
+    <Image Include="Btn_Circle.bmp" />
+    <Image Include="Btn_Circle_Hover.bmp" />
     <Image Include="Btn_Fill.bmp" />
     <Image Include="Btn_Fill_Hover.bmp" />
+    <Image Include="Btn_Line.bmp" />
+    <Image Include="Btn_Line_Hover.bmp" />
     <Image Include="Btn_Load.bmp" />
     <Image Include="Btn_Load_Hover.bmp" />
     <Image Include="Btn_Move.bmp" />
@@ -174,6 +182,8 @@
     <Image Include="Btn_Save_Hover.bmp" />
     <Image Include="Btn_Shapes.bmp" />
     <Image Include="Btn_Shapes_Hover.bmp" />
+    <Image Include="Btn_Square.bmp" />
+    <Image Include="Btn_Square_Hover.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

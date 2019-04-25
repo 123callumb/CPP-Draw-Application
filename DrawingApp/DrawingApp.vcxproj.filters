@@ -30,6 +30,12 @@
     <ClInclude Include="BoundingRect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ControlExpand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EasyGraphics.cpp">
@@ -48,6 +54,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BoundingRect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlExpand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -92,6 +104,24 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Btn_Save_Hover.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Btn_Circle.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Btn_Circle_Hover.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Btn_Line.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Btn_Line_Hover.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Btn_Square.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Btn_Square_Hover.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
