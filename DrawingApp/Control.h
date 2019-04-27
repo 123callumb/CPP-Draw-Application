@@ -1,29 +1,21 @@
 #pragma once
 #include "Element.h"
-#include "BoundingRect.h"
+#include "ControlPanel.h"
 
 using namespace std;
 
 class Control : public Element
 {
 public:
-	Control(EasyGraphics *currentInterface, BoundingRect rect, const wchar_t *filename, const wchar_t *filenameSelected);
+	Control(EasyGraphics *currentInterface, BoundingArea bArea, ControlPanel * currentPanel,  const wchar_t *filename, const wchar_t *filenameSelected, int ID);
 	~Control();
-	inline void deselect(); 
-	inline int getSelected();
 protected:
-	int selected = 0; // 0 is not selected, 1 is selected It is an int so a button can have more than binary options.
+	bool selected = false;
 	const wchar_t *image, *imageHover;
+	int controlID; // This is how we identify the action.
+	ControlPanel * panel;
 
 	virtual void onClick(int x, int y), onRender(); // Overwriting these from element class.
 };
 
-/// Get current controls selected value
-inline int Control::getSelected() {
-	return selected; 
-}
 
-// Deselect the current control, used in menu class for only one control active at one time
-inline void Control::deselect() {
-	selected = 0; 
-}

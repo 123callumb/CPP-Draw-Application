@@ -1,6 +1,6 @@
 #include "Element.h"
 
-Element::Element(EasyGraphics * uiTool, BoundingRect bRect) : UI(uiTool), rect(bRect), collisionRect(bRect)
+Element::Element(EasyGraphics * uiTool, BoundingArea bArea) : UI(uiTool), area(bArea), collisionArea(bArea)
 {
 }
 

@@ -27,13 +27,28 @@
     <ClInclude Include="Element.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BoundingRect.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ControlExpand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MenuUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeTool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Canvas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundingArea.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -53,13 +68,28 @@
     <ClCompile Include="Element.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BoundingRect.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ControlExpand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MenuUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShapeTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Canvas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundingArea.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -122,6 +152,15 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Btn_Square_Hover.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Icon_Circle.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Icon_Line.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Icon_Rect.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

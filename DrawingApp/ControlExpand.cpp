@@ -9,18 +9,19 @@ ControlExpand::~ControlExpand()
 {
 }
 
-void ControlExpand::addControl(Control *control)
+void ControlExpand::addControl(Control * subControl)
 {
-	// First we need to expand the collision rectange.
-	setCollisionRect(rect + control->getBoudingRect());
-	controlList.push_back(control);
-
+	BoundingArea newBouds(area.getX(), area.getY(), subControl->getBoudingArea().getX1(), area.getY1(), ShapeTool::RECT);
+//	BoundingArea subBound = subControl->getBoudingArea();
+//	BoundingArea newBouds = area + subBound;
+	setCollisionArea(newBouds);
+	controlList.push_back(subControl);
 }
 
 void ControlExpand::onRender()
 {
 	// Draw initial button
-	UI->drawBitmap((hovering || selected) ? imageHover : image, rect.x, rect.y, rect.w, rect.h, UI->clWhite);
+	UI->drawBitmap((hovering || selected) ? imageHover : image, area.getX(), area.getY(), area.getX1() - area.getX(), area.getY1() - area.getY(), UI->clWhite);
 	// Then draw the additional buttons if currently hovering.
 	if (hovering || selected) {
 		// CHANGE THIS TO STL ITTERATOR

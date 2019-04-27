@@ -1,11 +1,16 @@
 #pragma once
-// This class is for the side menu.
-#include "Control.h"
-#include <vector>
+#include "ControlPanel.h"
 #include "EasyGraphics.h"
-#include "BoundingRect.h"
+#include <vector>
+#include "Control.h"
+#include "BoundingArea.h"
+#include "ControlExpand.h"
+#include "ShapeTool.h"
 
-class MenuUI
+using namespace std;
+
+// This class is for the side menu.
+class MenuUI : public ControlPanel
 {
 public:
 	MenuUI(EasyGraphics *currentUI);
