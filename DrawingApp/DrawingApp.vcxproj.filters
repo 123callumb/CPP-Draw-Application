@@ -60,6 +60,9 @@
     <ClInclude Include="ControlColour.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ColourTool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EasyGraphics.cpp">
@@ -108,6 +111,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ControlColour.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ColourTool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -182,6 +188,12 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Icon_Move.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Icon_Fill.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Icon_FillLine.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

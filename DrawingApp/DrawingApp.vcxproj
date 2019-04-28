@@ -148,6 +148,7 @@
     <ClInclude Include="BoundingArea.h" />
     <ClInclude Include="Canvas.h" />
     <ClInclude Include="CanvasShape.h" />
+    <ClInclude Include="ColourTool.h" />
     <ClInclude Include="Control.h" />
     <ClInclude Include="ControlColour.h" />
     <ClInclude Include="ControlExpand.h" />
@@ -165,6 +166,7 @@
     <ClCompile Include="BoundingArea.cpp" />
     <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="CanvasShape.cpp" />
+    <ClCompile Include="ColourTool.cpp" />
     <ClCompile Include="Control.cpp" />
     <ClCompile Include="ControlColour.cpp" />
     <ClCompile Include="ControlExpand.cpp" />
@@ -201,6 +203,8 @@
     <Image Include="Btn_Square.bmp" />
     <Image Include="Btn_Square_Hover.bmp" />
     <Image Include="Icon_Circle.bmp" />
+    <Image Include="Icon_Fill.bmp" />
+    <Image Include="Icon_FillLine.bmp" />
     <Image Include="Icon_Line.bmp" />
     <Image Include="Icon_Move.bmp" />
     <Image Include="Icon_Rect.bmp" />

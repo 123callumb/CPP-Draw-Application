@@ -8,10 +8,17 @@ Tools::Tools(EasyGraphics * currentInterface, Canvas * currentCanvas) : ui(curre
 
 	MoveTool * moveTool = new MoveTool(ui, L"Icon_Move.bmp", canvas);
 
+	ColourTool * cyanFillTool = new ColourTool(ui, L"Icon_Fill.bmp", canvas, ui->clCyan);
+	ColourTool * redFillTool = new ColourTool(ui, L"Icon_Fill.bmp", canvas, ui->clRed);
+	ColourTool * yellowFillTool = new ColourTool(ui, L"Icon_Fill.bmp", canvas, ui->clYellow);
+
 	toolList.push_back(rectTool);
 	toolList.push_back(circleTool);
 	toolList.push_back(lineTool);
 	toolList.push_back(moveTool);
+	toolList.push_back(cyanFillTool);
+	toolList.push_back(redFillTool);
+	toolList.push_back(yellowFillTool);
 }
 
 

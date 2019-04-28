@@ -9,6 +9,16 @@ CanvasShape::~CanvasShape()
 {
 }
 
+void CanvasShape::setFillColour(int colour)
+{
+	fillColour = colour;
+}
+
+void CanvasShape::setOutlineColour(int colour)
+{
+	outlineColour = colour;
+}
+
 void CanvasShape::onRender() {
 	switch (area->getShapeType())
 	{

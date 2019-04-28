@@ -31,6 +31,11 @@ void Canvas::moveShape(int shapeIndex, int x, int y)
 	current->setY1(y + (y - current->getY1()));
 }
 
+void Canvas::fillShape(int shapeIndex, int colour)
+{
+	canvasElements.at(shapeIndex)->setFillColour(colour);
+}
+
 bool Canvas::shapeExistsAt(int x, int y)
 {
 	bool exists(false);
