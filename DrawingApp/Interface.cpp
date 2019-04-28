@@ -46,5 +46,3 @@ void Interface::onLButtonUp(UINT nFlags, int x, int y)
 	tools.currrentToolUp(x, y);
 	onDraw();
 }
-
-

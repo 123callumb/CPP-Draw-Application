@@ -12,7 +12,9 @@ public:
 	Canvas(EasyGraphics * currentInterface);
 	~Canvas();
 	void addToCanvas(BoundingArea elementBounds, int fillColour, int outlineColour);
-	void render();
+	void render(), moveShape(int shapeIndex, int x, int y);
+	bool shapeExistsAt(int x, int y);
+	int getShapeIndexAt(int x, int y);
 private:
 	vector<CanvasShape*> canvasElements;
 	EasyGraphics * UI;

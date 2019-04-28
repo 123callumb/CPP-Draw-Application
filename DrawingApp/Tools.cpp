@@ -6,9 +6,12 @@ Tools::Tools(EasyGraphics * currentInterface, Canvas * currentCanvas) : ui(curre
 	ShapeTool * circleTool = new ShapeTool(ui, BoundingArea::CIRCLE, L"Icon_Circle.bmp", canvas);
 	ShapeTool * lineTool = new ShapeTool(ui, BoundingArea::LINE, L"Icon_Line.bmp", canvas);
 
+	MoveTool * moveTool = new MoveTool(ui, L"Icon_Move.bmp", canvas);
+
 	toolList.push_back(rectTool);
 	toolList.push_back(circleTool);
 	toolList.push_back(lineTool);
+	toolList.push_back(moveTool);
 }
 
 

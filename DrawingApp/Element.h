@@ -11,7 +11,7 @@ public:
 
 	inline void render(), click(int x, int y), hover(int x, int y);
 	inline void setCollisionArea(BoundingArea bArea); // Some elements may have a collision box different to their actual visual size.
-
+	inline void setNewArea(BoundingArea bArea);
 	inline BoundingArea getBoudingArea();
 protected:
 	virtual void onClick(int x, int y) = 0, onRender() = 0;
@@ -51,6 +51,11 @@ inline void Element::hover(int x, int y) {
 inline void Element::setCollisionArea(BoundingArea bArea)
 {
 	collisionArea = bArea;
+}
+
+inline void Element::setNewArea(BoundingArea bArea)
+{
+	area = bArea;
 }
 
 inline void Element::offHover(int x, int y)
