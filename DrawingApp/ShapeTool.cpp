@@ -74,5 +74,5 @@ void ShapeTool::drawLine()
 // This will create the shape and add it to the canvas.
 void ShapeTool::createShape()
 {
-	canvas->addToCanvas(BoundingArea(s[0], s[1], e[0], e[1], shapeType), EasyGraphics::clBlack, EasyGraphics::clBlack);
+	canvas->addToCanvas(new BoundingArea(s[0], s[1], e[0], e[1], shapeType), EasyGraphics::clBlack, EasyGraphics::clBlack);
 }

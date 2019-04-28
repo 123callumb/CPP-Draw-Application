@@ -5,7 +5,7 @@
 #include "Control.h"
 #include "BoundingArea.h"
 #include "ControlExpand.h"
-#include "ShapeTool.h"
+#include "ControlColour.h"
 
 using namespace std;
 

@@ -7,7 +7,7 @@ using namespace std;
 class Control : public Element
 {
 public:
-	Control(EasyGraphics *currentInterface, BoundingArea bArea, ControlPanel * currentPanel,  const wchar_t *filename, const wchar_t *filenameSelected, int ID);
+	Control(EasyGraphics *currentInterface, BoundingArea * bArea, ControlPanel * currentPanel,  const wchar_t *filename, const wchar_t *filenameSelected, int ID);
 	~Control();
 protected:
 	bool selected = false;

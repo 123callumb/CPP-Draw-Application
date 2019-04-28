@@ -11,15 +11,14 @@ ControlExpand::~ControlExpand()
 
 void ControlExpand::addControl(Control * subControl)
 {
-	BoundingArea newBouds = area + subControl->getBoudingArea();
-	setCollisionArea(newBouds);
+	collisionArea->setX1(subControl->getBoudingArea()->getX1());
 	controlList.push_back(subControl);
 }
 
 void ControlExpand::onRender()
 {
 	// Draw initial button
-	UI->drawBitmap((hovering || selected) ? imageHover : image, area.getX(), area.getY(), area.getX1() - area.getX(), area.getY1() - area.getY(), UI->clWhite);
+	UI->drawBitmap((hovering || selected) ? imageHover : image, area->getX(), area->getY(), area->getX1() - area->getX(), area->getY1() - area->getY(), UI->clWhite);
 	// Then draw the additional buttons if currently hovering.
 	if (hovering || selected) {
 		// CHANGE THIS TO STL ITTERATOR

@@ -10,17 +10,21 @@ BoundingArea::~BoundingArea()
 
 bool BoundingArea::isInside(int xPos, int yPos)
 {
+
 	switch (shapeType)
 	{
 	case RECT:
 		return ((xPos >= x) && (xPos <= x1) && (yPos >= y) && (yPos < y1));
 		break;
 	case CIRCLE:
-		return false;
+		return ((xPos - x)^2 + (yPos - y)^2) < x1 - x;
 		break;
 	case LINE:
-		return false;
+	{
+		double dxy = ((y1 - y) / (x1 - x));
+		return (yPos == (dxy * xPos) + ((dxy * x) - y));
 		break;
+	}
 	default:
 		return false;
 		break;

@@ -11,7 +11,7 @@ class Canvas
 public:
 	Canvas(EasyGraphics * currentInterface);
 	~Canvas();
-	void addToCanvas(BoundingArea elementBounds, int fillColour, int outlineColour);
+	void addToCanvas(BoundingArea * elementBounds, int fillColour, int outlineColour);
 	void render(), moveShape(int shapeIndex, int x, int y);
 	bool shapeExistsAt(int x, int y);
 	int getShapeIndexAt(int x, int y);

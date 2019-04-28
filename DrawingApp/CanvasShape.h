@@ -7,7 +7,7 @@ class CanvasShape :
 	public Element
 {
 public:
-	CanvasShape(EasyGraphics * currentInterface, BoundingArea shapeArea, int fillColour, int outlineColour);
+	CanvasShape(EasyGraphics * currentInterface, BoundingArea * shapeArea, int fillColour, int outlineColour);
 	~CanvasShape();
 protected:
 	void onRender(), onClick(int x, int y);

@@ -149,6 +149,7 @@
     <ClInclude Include="Canvas.h" />
     <ClInclude Include="CanvasShape.h" />
     <ClInclude Include="Control.h" />
+    <ClInclude Include="ControlColour.h" />
     <ClInclude Include="ControlExpand.h" />
     <ClInclude Include="ControlPanel.h" />
     <ClInclude Include="EasyGraphics.h" />
@@ -165,6 +166,7 @@
     <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="CanvasShape.cpp" />
     <ClCompile Include="Control.cpp" />
+    <ClCompile Include="ControlColour.cpp" />
     <ClCompile Include="ControlExpand.cpp" />
     <ClCompile Include="ControlPanel.cpp" />
     <ClCompile Include="EasyGraphics.cpp" />
