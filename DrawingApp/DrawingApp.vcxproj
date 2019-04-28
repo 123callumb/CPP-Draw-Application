@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClInclude Include="BoundingArea.h" />
     <ClInclude Include="Canvas.h" />
+    <ClInclude Include="CanvasShape.h" />
     <ClInclude Include="Control.h" />
     <ClInclude Include="ControlExpand.h" />
     <ClInclude Include="ControlPanel.h" />
@@ -161,6 +162,7 @@
   <ItemGroup>
     <ClCompile Include="BoundingArea.cpp" />
     <ClCompile Include="Canvas.cpp" />
+    <ClCompile Include="CanvasShape.cpp" />
     <ClCompile Include="Control.cpp" />
     <ClCompile Include="ControlExpand.cpp" />
     <ClCompile Include="ControlPanel.cpp" />

@@ -1,16 +1,20 @@
 #pragma once
-#include "Element.h"
-#include <vector>
+#include "CanvasShape.h"
+#include "BoundingArea.h"
+#include "EasyGraphics.h"
+
 // Class that stores the position, colours etc of all draw elements.
 using namespace std;
 
 class Canvas
 {
 public:
-	Canvas();
+	Canvas(EasyGraphics * currentInterface);
 	~Canvas();
-	void addToCanvas(int p1[2], int p2[2], int fillColour, int outlineColour);
+	void addToCanvas(BoundingArea elementBounds, int fillColour, int outlineColour);
+	void render();
 private:
-	vector<Element*> canvasElements;
+	vector<CanvasShape*> canvasElements;
+	EasyGraphics * UI;
 };
 

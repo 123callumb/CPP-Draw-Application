@@ -2,6 +2,7 @@
 #include "EasyGraphics.h"
 #include "MenuUI.h"
 #include "Tools.h"
+#include "Canvas.h"
 
 using namespace std;
 
@@ -12,8 +13,9 @@ public:
 	Interface(HINSTANCE hInstance);
 	~Interface();
 private:
-	MenuUI controlMenu;
-	Tools tools;
+	Canvas canvas = Canvas(this);
+	MenuUI controlMenu = MenuUI(this);
+	Tools tools = Tools(this, &canvas);
 
 	void onCreate();
 	void onDraw();

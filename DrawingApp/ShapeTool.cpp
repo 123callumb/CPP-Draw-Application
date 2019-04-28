@@ -2,7 +2,7 @@
 
 
 
-ShapeTool::ShapeTool(EasyGraphics * currentInterface, int shapeType, const wchar_t * iconTexture) : Tool(currentInterface, iconTexture), shapeType(shapeType)
+ShapeTool::ShapeTool(EasyGraphics * currentInterface, int shapeType, const wchar_t * iconTexture, Canvas * currentCanvas) : Tool(currentInterface, iconTexture, currentCanvas), shapeType(shapeType)
 {
 }
 
@@ -23,6 +23,7 @@ void ShapeTool::onClickUp(int x, int y)
 	clickHeld = false;
 	e[0] = x;
 	e[1] = y;
+	createShape();
 }
 
 void ShapeTool::onMove(int x, int y)
@@ -37,13 +38,13 @@ void ShapeTool::renderGraphics() {
 	if (clickHeld) {
 		switch (shapeType)
 		{
-		case RECT:
+		case BoundingArea::RECT:
 			drawRect();
 			break;
-		case CIRCLE:
+		case BoundingArea::CIRCLE:
 			drawCricle();
 			break;
-		case LINE:
+		case BoundingArea::LINE:
 			drawLine();
 			break;
 		default:
@@ -55,17 +56,23 @@ void ShapeTool::renderGraphics() {
 void ShapeTool::drawRect()
 {
 	UI->selectBackColour(UI->clBlack);
-	UI->drawRectangle(s[0], s[1], clickHeld ? c[0] - s[0] : e[0] - s[0], clickHeld ? c[1] - s[1] : e[1] - s[1], true);
+	UI->drawRectangle(s[0], s[1],  c[0] - s[0], c[1] - s[1], true);
 }
 
 void ShapeTool::drawCricle()
 {
 	UI->selectBackColour(UI->clBlack);
-	UI->drawCircle(s[0], s[1], clickHeld ? c[0] - s[0] : e[0] - s[0], true);
+	UI->drawCircle(s[0], s[1], c[0] - s[0] , true);
 }
 
 void ShapeTool::drawLine()
 {
 	UI->setPenColour(UI->clBlack ,1);
-	UI->drawLine(s[0], s[1], clickHeld ? c[0] : e[0] , clickHeld ? c[1]  : e[1]);
+	UI->drawLine(s[0], s[1],  c[0], c[1]);
+}
+
+// This will create the shape and add it to the canvas.
+void ShapeTool::createShape()
+{
+	canvas->addToCanvas(BoundingArea(s[0], s[1], e[0], e[1], shapeType), EasyGraphics::clBlack, EasyGraphics::clBlack);
 }

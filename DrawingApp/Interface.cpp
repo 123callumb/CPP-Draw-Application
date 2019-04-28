@@ -1,7 +1,7 @@
 #include "Interface.h"
 
 
-Interface::Interface(HINSTANCE hInstance) : controlMenu(this), tools(this)
+Interface::Interface(HINSTANCE hInstance)
 {
 	setImmediateDrawMode(false);
 
@@ -20,6 +20,7 @@ void Interface::onCreate()
 
 void Interface::onDraw() {
 	clrscr(clWhite);
+	canvas.render();
 	tools.renderCurrrentToolIcon();
 	tools.renderCurrentToolGraphics();
 	controlMenu.onDraw();

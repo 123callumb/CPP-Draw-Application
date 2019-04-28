@@ -11,9 +11,7 @@ ControlExpand::~ControlExpand()
 
 void ControlExpand::addControl(Control * subControl)
 {
-	BoundingArea newBouds(area.getX(), area.getY(), subControl->getBoudingArea().getX1(), area.getY1(), ShapeTool::RECT);
-//	BoundingArea subBound = subControl->getBoudingArea();
-//	BoundingArea newBouds = area + subBound;
+	BoundingArea newBouds = area + subControl->getBoudingArea();
 	setCollisionArea(newBouds);
 	controlList.push_back(subControl);
 }

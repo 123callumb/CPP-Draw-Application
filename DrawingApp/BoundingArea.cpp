@@ -12,13 +12,13 @@ bool BoundingArea::isInside(int xPos, int yPos)
 {
 	switch (shapeType)
 	{
-	case ShapeTool::RECT:
+	case RECT:
 		return ((xPos >= x) && (xPos <= x1) && (yPos >= y) && (yPos < y1));
 		break;
-	case ShapeTool::CIRCLE:
+	case CIRCLE:
 		return false;
 		break;
-	case ShapeTool::LINE:
+	case LINE:
 		return false;
 		break;
 	default:
@@ -38,5 +38,5 @@ const BoundingArea BoundingArea::operator+(const BoundingArea & rhs) const
 		bX = bX < coords[i] ? coords[i] : bX;
 		bY = bY < coords[i + 1] ? coords[i + 1] : bY;
 	}
-	return BoundingArea(sX, sY, bX, bY, ShapeTool::RECT);
+	return BoundingArea(sX, sY, bX, bY, RECT);
 }

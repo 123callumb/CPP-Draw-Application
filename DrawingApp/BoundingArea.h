@@ -1,5 +1,4 @@
 #pragma once
-#include "ShapeTool.h"
 // This is a bounding area surrouned by an element, used for seeing if the mouse is inside of the object.
 class BoundingArea
 {
@@ -7,11 +6,14 @@ public:
 	BoundingArea(int x, int y, int x1, int y1, int shapeType);
 	~BoundingArea();
 
-	inline const int getX() const, getY() const, getX1() const, getY1() const, getShapeType() const;
+	inline const int getX() const, getY() const, getX1() const, getY1() const;
+	inline const int getShapeType();
 	inline void setX(int v), setY(int v), setX1(int v), setY1(int v);
 	bool isInside(int xPos, int yPos);
 
 	const BoundingArea operator+ (const BoundingArea & rhs) const;
+
+	static const int RECT = 0, CIRCLE = 1, LINE = 2;
 protected:
 	int x, y, x1, y1, shapeType;
 };
@@ -36,7 +38,7 @@ inline const int BoundingArea::getY1() const
 	return y1;
 }
 
-inline const int BoundingArea::getShapeType() const
+inline const int BoundingArea::getShapeType() 
 {
 	return shapeType;
 }

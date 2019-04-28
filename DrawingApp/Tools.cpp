@@ -1,11 +1,10 @@
 #include "Tools.h"
 
-Tools::Tools(EasyGraphics * currentInterface) : ui(currentInterface)
-{
-	
-	ShapeTool * rectTool = new ShapeTool(ui, ShapeTool::RECT, L"Icon_Rect.bmp");
-	ShapeTool * circleTool = new ShapeTool(ui, ShapeTool::CIRCLE, L"Icon_Circle.bmp");
-	ShapeTool * lineTool = new ShapeTool(ui, ShapeTool::LINE, L"Icon_Line.bmp");
+Tools::Tools(EasyGraphics * currentInterface, Canvas * currentCanvas) : ui(currentInterface), canvas(currentCanvas)
+{	
+	ShapeTool * rectTool = new ShapeTool(ui, BoundingArea::RECT, L"Icon_Rect.bmp", canvas);
+	ShapeTool * circleTool = new ShapeTool(ui, BoundingArea::CIRCLE, L"Icon_Circle.bmp", canvas);
+	ShapeTool * lineTool = new ShapeTool(ui, BoundingArea::LINE, L"Icon_Line.bmp", canvas);
 
 	toolList.push_back(rectTool);
 	toolList.push_back(circleTool);

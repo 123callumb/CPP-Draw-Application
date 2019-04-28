@@ -51,6 +51,9 @@
     <ClInclude Include="BoundingArea.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CanvasShape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EasyGraphics.cpp">
@@ -90,6 +93,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BoundingArea.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CanvasShape.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
