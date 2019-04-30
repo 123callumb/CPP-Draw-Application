@@ -6,6 +6,7 @@
 #include "Canvas.h"
 #include "MoveTool.h"
 #include "ColourTool.h"
+#include "DeleteTool.h"
 // This is just a list of all the tools. This class serves as a connector to the menu and the canvas.
 using namespace std;
 

@@ -2,6 +2,7 @@
 
 MenuUI::MenuUI(EasyGraphics *currrentUI)  : ui(currrentUI)
 {
+	// Clean this class, especially with the coordinates of the buttons, can eaily be done better here.
 	// SHAPES BUTTON
 	Control shapesButton = Control(ui,new BoundingArea(0, 100, 68, 155, BoundingArea::RECT), this, L"Btn_Shapes.bmp", L"Btn_Shapes_Hover.bmp", -1); // -1 because it does not serve a function
 	ControlExpand *shapesExpandButton = new ControlExpand(shapesButton);
@@ -15,7 +16,7 @@ MenuUI::MenuUI(EasyGraphics *currrentUI)  : ui(currrentUI)
 	controls.push_back(new Control(ui, new BoundingArea(0, 155, 68, 210, BoundingArea::RECT), this, L"Btn_Move.bmp", L"Btn_Move_Hover.bmp", 3));
 
 	// DELETE BUTTON
-	controls.push_back(new Control(ui, new BoundingArea(0, 210, 68, 265, BoundingArea::RECT), this, L"Btn_Bin.bmp", L"Btn_Bin_Hover.bmp", -1));
+	controls.push_back(new Control(ui, new BoundingArea(0, 210, 68, 265, BoundingArea::RECT), this, L"Btn_Bin.bmp", L"Btn_Bin_Hover.bmp", 4));
 
 	// SAVE BUTTON
 	controls.push_back(new Control(ui, new BoundingArea(0, 265, 68, 320, BoundingArea::RECT), this, L"Btn_Save.bmp", L"Btn_Save_Hover.bmp", -1));
@@ -25,16 +26,16 @@ MenuUI::MenuUI(EasyGraphics *currrentUI)  : ui(currrentUI)
 
 	// FILL COLOUR BUTTON
 	ControlExpand *fillExpandButton = new ControlExpand(Control(ui, new BoundingArea(0, 375, 68, 430, BoundingArea::RECT), this, L"Btn_Fill.bmp", L"Btn_Fill_Hover.bmp", -1));
-	fillExpandButton->addControl(new ControlColour(Control(ui, new BoundingArea(68, 375, 134, 430, BoundingArea::RECT), this, L"Btn_Square.bmp" , L"Btn_Square_Hover.bmp", 4), EasyGraphics::clCyan));
-	fillExpandButton->addControl(new ControlColour(Control(ui, new BoundingArea(134, 375, 202, 430, BoundingArea::RECT), this, L"Btn_Square.bmp", L"Btn_Square_Hover.bmp", 5), EasyGraphics::clRed));
-	fillExpandButton->addControl(new ControlColour(Control(ui, new BoundingArea(202, 375, 270, 430, BoundingArea::RECT), this, L"Btn_Square.bmp", L"Btn_Square_Hover.bmp", 6), EasyGraphics::clYellow));
+	fillExpandButton->addControl(new ControlColour(Control(ui, new BoundingArea(68, 375, 134, 430, BoundingArea::RECT), this, L"Btn_Square.bmp" , L"Btn_Square_Hover.bmp", 5), EasyGraphics::clCyan));
+	fillExpandButton->addControl(new ControlColour(Control(ui, new BoundingArea(134, 375, 202, 430, BoundingArea::RECT), this, L"Btn_Square.bmp", L"Btn_Square_Hover.bmp", 6), EasyGraphics::clRed));
+	fillExpandButton->addControl(new ControlColour(Control(ui, new BoundingArea(202, 375, 270, 430, BoundingArea::RECT), this, L"Btn_Square.bmp", L"Btn_Square_Hover.bmp", 7), EasyGraphics::clYellow));
 	controls.push_back(fillExpandButton);
 
 	/// OUTLINE COLOUR BUTTON
 	ControlExpand *lineExpandButton = new ControlExpand(Control(ui, new BoundingArea(0, 430, 68, 485, BoundingArea::RECT), this, L"Btn_Outline.bmp", L"Btn_Outline_Hover.bmp", -1));
-	lineExpandButton->addControl(new ControlColour(Control(ui, new BoundingArea(68, 430, 134, 485, BoundingArea::RECT), this, L"Btn_Square.bmp", L"Btn_Square_Hover.bmp", 7), EasyGraphics::clCyan));
-	lineExpandButton->addControl(new ControlColour(Control(ui, new BoundingArea(134, 430, 202, 485, BoundingArea::RECT), this, L"Btn_Square.bmp", L"Btn_Square_Hover.bmp", 8), EasyGraphics::clRed));
-	lineExpandButton->addControl(new ControlColour(Control(ui, new BoundingArea(202, 430, 270, 485, BoundingArea::RECT), this, L"Btn_Square.bmp", L"Btn_Square_Hover.bmp", 9), EasyGraphics::clYellow));
+	lineExpandButton->addControl(new ControlColour(Control(ui, new BoundingArea(68, 430, 134, 485, BoundingArea::RECT), this, L"Btn_Square.bmp", L"Btn_Square_Hover.bmp", 8), EasyGraphics::clCyan));
+	lineExpandButton->addControl(new ControlColour(Control(ui, new BoundingArea(134, 430, 202, 485, BoundingArea::RECT), this, L"Btn_Square.bmp", L"Btn_Square_Hover.bmp", 9), EasyGraphics::clRed));
+	lineExpandButton->addControl(new ControlColour(Control(ui, new BoundingArea(202, 430, 270, 485, BoundingArea::RECT), this, L"Btn_Square.bmp", L"Btn_Square_Hover.bmp", 10), EasyGraphics::clYellow));
 	controls.push_back(lineExpandButton);
 
 	

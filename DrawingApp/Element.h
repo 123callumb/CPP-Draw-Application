@@ -12,12 +12,14 @@ public:
 	inline void render(), click(int x, int y), hover(int x, int y);
 	inline void setNewArea(BoundingArea * bArea);
 	inline BoundingArea * getBoudingArea();
+	inline BoundingArea * getCollisionArea();
 protected:
 	virtual void onClick(int x, int y) = 0, onRender() = 0;
 	inline virtual void onHover(int x, int y), offHover(int x, int y); // This is incase we want to use the onHover with certain inheriters of the element
 	bool hovering = false;
 	EasyGraphics * UI;
-	BoundingArea * area, * collisionArea ; // To start with they have the same pointer address unless the collision area is altered
+	BoundingArea * area;
+	BoundingArea * collisionArea; // To start with they have the same pointer address unless the collision area is altered
 };
 
 inline void Element::render() {
@@ -27,6 +29,11 @@ inline void Element::render() {
 inline BoundingArea * Element::getBoudingArea()
 {
 	return area;
+}
+
+inline BoundingArea * Element::getCollisionArea()
+{
+	return collisionArea;
 }
 
 inline void Element::click(int x, int y) {

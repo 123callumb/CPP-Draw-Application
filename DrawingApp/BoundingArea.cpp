@@ -19,12 +19,12 @@ bool BoundingArea::isInside(int xPos, int yPos)
 	case CIRCLE:
 		return ((xPos - x)^2 + (yPos - y)^2) < x1 - x;
 		break;
-	case LINE:
-	{
-		double dxy = ((y1 - y) / (x1 - x));
-		return (yPos == (dxy * xPos) + ((dxy * x) - y));
-		break;
-	}
+	//case LINE: // I think this breaks a lot
+	//{
+	//	double dxy((y1 - y) / (x1 - x));
+	//	return (yPos == (dxy * xPos) + ((dxy * x) - y));
+	//	break;
+	//}
 	default:
 		return false;
 		break;

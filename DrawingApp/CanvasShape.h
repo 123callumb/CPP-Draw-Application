@@ -9,10 +9,10 @@ class CanvasShape :
 public:
 	CanvasShape(EasyGraphics * currentInterface, BoundingArea * shapeArea, int fillColour, int outlineColour);
 	~CanvasShape();
-	void setFillColour(int colour), setOutlineColour(int colour);
+	void setFillColour(int colour), setOutlineColour(int colour, int thickness);
 protected:
 	void onRender(), onClick(int x, int y);
 private:
-	int fillColour, outlineColour;
+	int fillColour, outlineColour, lineThickness;
 };
 

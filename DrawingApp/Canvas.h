@@ -12,7 +12,7 @@ public:
 	Canvas(EasyGraphics * currentInterface);
 	~Canvas();
 	void addToCanvas(BoundingArea * elementBounds, int fillColour, int outlineColour);
-	void render(), moveShape(int shapeIndex, int x, int y), fillShape(int shapeIndex, int colour);
+	void render(), moveShape(int shapeIndex, int x, int y), fillShape(int shapeIndex, int colour), fillOutline(int shapeIndex, int colour, int thickness), deleteShape(int shapeIndex);
 	bool shapeExistsAt(int x, int y);
 	int getShapeIndexAt(int x, int y);
 private:

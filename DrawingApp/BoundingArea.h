@@ -8,7 +8,7 @@ public:
 
 	inline const int getX() const, getY() const, getX1() const, getY1() const;
 	inline const int getShapeType();
-	inline void setX(int v), setY(int v), setX1(int v), setY1(int v);
+	inline void setX(int v), setY(int v), setX1(int v), setY1(int v), setAll(int x, int y, int x1, int y1);
 	bool isInside(int xPos, int yPos);
 
 	const BoundingArea operator+ (const BoundingArea & rhs) const;
@@ -51,6 +51,14 @@ inline void BoundingArea::setX(int v)
 inline void BoundingArea::setY1(int v)
 {
 	y1 = v;
+}
+
+inline void BoundingArea::setAll(int x, int y, int x1, int y1)
+{
+	this->x = x;
+	this->y = y;
+	this->x1 = x1;
+	this->y1 = y1;
 }
 
 inline void BoundingArea::setY(int v)

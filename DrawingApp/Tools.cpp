@@ -7,18 +7,30 @@ Tools::Tools(EasyGraphics * currentInterface, Canvas * currentCanvas) : ui(curre
 	ShapeTool * lineTool = new ShapeTool(ui, BoundingArea::LINE, L"Icon_Line.bmp", canvas);
 
 	MoveTool * moveTool = new MoveTool(ui, L"Icon_Move.bmp", canvas);
+	
+	DeleteTool * deleteTool = new DeleteTool(ui, L"Icon_Rect.bmp", canvas);
 
-	ColourTool * cyanFillTool = new ColourTool(ui, L"Icon_Fill.bmp", canvas, ui->clCyan);
-	ColourTool * redFillTool = new ColourTool(ui, L"Icon_Fill.bmp", canvas, ui->clRed);
-	ColourTool * yellowFillTool = new ColourTool(ui, L"Icon_Fill.bmp", canvas, ui->clYellow);
+	ColourTool * cyanFillTool = new ColourTool(ui, L"Icon_Fill.bmp", canvas, ui->clCyan, false);
+	ColourTool * redFillTool = new ColourTool(ui, L"Icon_Fill.bmp", canvas, ui->clRed, false);
+	ColourTool * yellowFillTool = new ColourTool(ui, L"Icon_Fill.bmp", canvas, ui->clYellow, false);
 
+	ColourTool * cyanOutlineTool = new ColourTool(ui, L"Icon_FillLine.bmp", canvas, ui->clCyan, true);
+	ColourTool * redOutlineTool = new ColourTool(ui, L"Icon_FillLine.bmp", canvas, ui->clRed, true);
+	ColourTool * yellowOutlineTool = new ColourTool(ui, L"Icon_FillLine.bmp", canvas, ui->clYellow, true);
+
+	// I could just push these straight back with out doing a varible declare but no point for now.
 	toolList.push_back(rectTool);
 	toolList.push_back(circleTool);
 	toolList.push_back(lineTool);
 	toolList.push_back(moveTool);
+	toolList.push_back(deleteTool);
 	toolList.push_back(cyanFillTool);
 	toolList.push_back(redFillTool);
 	toolList.push_back(yellowFillTool);
+	toolList.push_back(cyanOutlineTool);
+	toolList.push_back(redOutlineTool);
+	toolList.push_back(yellowOutlineTool);
+
 }
 
 
