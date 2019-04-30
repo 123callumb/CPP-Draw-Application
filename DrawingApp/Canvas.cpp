@@ -80,3 +80,8 @@ int Canvas::getShapeIndexAt(int x, int y)
 	}
 	return index + 1;
 }
+
+const vector<CanvasShape> Canvas::getCanvasElements() const
+{
+	return canvasElements;
+}

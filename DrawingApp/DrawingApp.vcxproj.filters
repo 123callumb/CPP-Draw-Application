@@ -66,6 +66,9 @@
     <ClInclude Include="DeleteTool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SaveTool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EasyGraphics.cpp">
@@ -120,6 +123,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DeleteTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveTool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

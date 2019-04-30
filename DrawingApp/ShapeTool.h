@@ -16,5 +16,5 @@ private:
 	int shapeType;
 	int s[2], e[2], c[2]; //  Coords for start, current and end 0 = x 1 = y etc
 	void drawRect(), drawCricle(), drawLine(), createShape();
-	//const wchar_t * shapeIcons[3] = { L"Icon_Rect.bmp", L"Icon_Circle.bmp", L"Icon_Line.bmp"}; this doesn't work, ask mike myb
+	//const wchar_t * shapeIcons[3] = { L"Icon_Rect.bmp", L"Icon_Circle.bmp", L"Icon_Line.bmp"}; // TODO: this doesn't work, ask mike myb
 };

@@ -10,6 +10,8 @@ Tools::Tools(EasyGraphics * currentInterface, Canvas * currentCanvas) : ui(curre
 	
 	DeleteTool * deleteTool = new DeleteTool(ui, L"Icon_Rect.bmp", canvas);
 
+	SaveTool * saveTool = new SaveTool(ui, L"Icon_Rect.bmp", canvas);
+
 	ColourTool * cyanFillTool = new ColourTool(ui, L"Icon_Fill.bmp", canvas, ui->clCyan, false);
 	ColourTool * redFillTool = new ColourTool(ui, L"Icon_Fill.bmp", canvas, ui->clRed, false);
 	ColourTool * yellowFillTool = new ColourTool(ui, L"Icon_Fill.bmp", canvas, ui->clYellow, false);
@@ -24,6 +26,7 @@ Tools::Tools(EasyGraphics * currentInterface, Canvas * currentCanvas) : ui(curre
 	toolList.push_back(lineTool);
 	toolList.push_back(moveTool);
 	toolList.push_back(deleteTool);
+	toolList.push_back(saveTool);
 	toolList.push_back(cyanFillTool);
 	toolList.push_back(redFillTool);
 	toolList.push_back(yellowFillTool);

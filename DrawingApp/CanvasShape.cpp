@@ -20,6 +20,16 @@ void CanvasShape::setOutlineColour(int colour, int thickness)
 	lineThickness = thickness;
 }
 
+
+int CanvasShape::getFillColour() {
+	return fillColour;
+}
+
+int CanvasShape::getOutlineColour()
+{
+	return outlineColour;
+}
+
 void CanvasShape::onRender() {
 
 	// Set colours

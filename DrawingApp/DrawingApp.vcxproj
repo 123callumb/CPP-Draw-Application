@@ -23,7 +23,7 @@
     <ProjectGuid>{8A95D50A-363A-46E0-A9EE-AFE4323E20E8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>DrawingApp</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -159,6 +159,7 @@
     <ClInclude Include="Interface.h" />
     <ClInclude Include="MenuUI.h" />
     <ClInclude Include="MoveTool.h" />
+    <ClInclude Include="SaveTool.h" />
     <ClInclude Include="ShapeTool.h" />
     <ClInclude Include="Tool.h" />
     <ClInclude Include="Tools.h" />
@@ -179,6 +180,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MenuUI.cpp" />
     <ClCompile Include="MoveTool.cpp" />
+    <ClCompile Include="SaveTool.cpp" />
     <ClCompile Include="ShapeTool.cpp" />
     <ClCompile Include="Tool.cpp" />
     <ClCompile Include="Tools.cpp" />
