@@ -3,6 +3,7 @@
 #include "BoundingArea.h"
 #include "EasyGraphics.h"
 #include "GlobalSettings.h"
+#include "CanvasScribble.h"
 #include <algorithm>
 
 // Class that stores the position, colours etc of all draw elements.
@@ -13,7 +14,7 @@ class Canvas
 public:
 	Canvas(EasyGraphics * currentInterface);
 	~Canvas();
-	void addToCanvas(BoundingArea * elementBounds, int fillColour, int outlineColour);
+	void addToCanvas(BoundingArea * elementBounds, int fillColour, int outlineColour), addScribble(vector<CanvasScribble::Point> points, BoundingArea * elementBouds, int outlineColour);
 	void render(), moveShape(int shapeIndex, int x, int y, int dxy[3]), fillShape(int shapeIndex), fillOutline(int shapeIndex), deleteShape(int shapeIndex), clear();
 	bool shapeExistsAt(int x, int y);
 	int getShapeIndexAt(int x, int y);

@@ -1,16 +1,11 @@
 #include "CanvasScribble.h"
 
 
-
-CanvasScribble::CanvasScribble()
-{
-}
-
-
-CanvasScribble::CanvasScribble(EasyGraphics * currentInterface, BoundingArea * shapeArea, int outlineColour)
+CanvasScribble::CanvasScribble(EasyGraphics * currentInterface, BoundingArea * shapeArea, int outlineColour, vector<Point> points) : CanvasShape(currentInterface, shapeArea, 0, outlineColour), linePoints(points)
 {
 }
 
 CanvasScribble::~CanvasScribble()
 {
 }
+

@@ -15,6 +15,12 @@ void Canvas::addToCanvas(BoundingArea * elementBounds, int fillColour, int outli
 	canvasElements.push_back(newShape);
 }
 
+void Canvas::addScribble(vector<CanvasScribble::Point> points, BoundingArea * elementBouds, int outlineColour)
+{
+	CanvasScribble * newScribble = new CanvasScribble(UI, elementBouds, outlineColour, points);
+	canvasElements.push_back(newScribble);
+}
+
 void Canvas::render()
 {
 	// This seems more long windeed than a loop without the itterator?

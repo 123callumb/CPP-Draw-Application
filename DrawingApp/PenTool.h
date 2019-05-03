@@ -14,5 +14,7 @@ protected:
 private:
 	vector<CanvasScribble::Point> linePoints;
 	bool held = false;
+	// When drawing the scribble we need to track its bouding rectangle
+	int sX = INT_MAX, sY = INT_MAX, bX = 0, bY = 0;
 };
 

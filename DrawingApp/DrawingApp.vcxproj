@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClInclude Include="BoundingArea.h" />
     <ClInclude Include="Canvas.h" />
+    <ClInclude Include="CanvasScribble.h" />
     <ClInclude Include="CanvasShape.h" />
     <ClInclude Include="ColourTool.h" />
     <ClInclude Include="Control.h" />
@@ -170,6 +171,7 @@
   <ItemGroup>
     <ClCompile Include="BoundingArea.cpp" />
     <ClCompile Include="Canvas.cpp" />
+    <ClCompile Include="CanvasScribble.cpp" />
     <ClCompile Include="CanvasShape.cpp" />
     <ClCompile Include="ColourTool.cpp" />
     <ClCompile Include="Control.cpp" />

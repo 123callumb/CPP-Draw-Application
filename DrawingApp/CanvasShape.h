@@ -13,7 +13,8 @@ public:
 	void setFillColour(int colour), setOutlineColour(int colour);
 	int getFillColour(), getOutlineColour();
 protected:
-	void onRender(), onClick(int x, int y);
+	virtual void onRender();
+	void onClick(int x, int y);
 	int outlineColour, lineThickness = 2;
 private:
 	int fillColour;

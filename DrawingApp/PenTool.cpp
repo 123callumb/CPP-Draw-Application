@@ -19,8 +19,12 @@ void PenTool::onClickDown(int x, int y)
 
 void PenTool::onClickUp(int x, int y)
 {
-
+	canvas->addScribble(linePoints, new BoundingArea(sX, sY, bX, bY, BoundingArea::RECT), GlobalSettings::getInstance()->getOutlineColour());
 	linePoints.clear();
+	sX = INT_MAX;
+	sY = INT_MAX;
+	bX = 0;
+	bY = 0;
 	held = false;
 }
 
@@ -37,6 +41,10 @@ void PenTool::onMove(int x, int y)
 {
 	updateMouseIcon(x, y);
 	if (held) {
+		sX = sX < x ? sX : x;
+		sY = sY < y ? sY : y;
+		bX = bX > x ? bX : x;
+		bY = bY > y ? bY : y;
 		linePoints.push_back({ x, y });
 	}
 }
