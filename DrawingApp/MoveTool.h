@@ -12,5 +12,6 @@ protected:
 	void onMove(int x, int y);
 private:
 	int shapeID = -1; 
+	int dxy[4];
 };
 

@@ -8,6 +8,9 @@
 #include "ColourTool.h"
 #include "DeleteTool.h"
 #include "SaveTool.h"
+#include "LoadTool.h"
+#include "PenTool.h"
+#include "GlobalSettings.h"
 // This is just a list of all the tools. This class serves as a connector to the menu and the canvas.
 using namespace std;
 
@@ -16,7 +19,7 @@ class Tools
 public:
 	Tools(EasyGraphics * currentInterface, Canvas * currentCanvas);
 	~Tools();
-	void currentToolMovement(int x, int y, int currentTool), currerntToolDown(int x, int y), currrentToolUp(int x, int y), renderCurrrentToolIcon(), renderCurrentToolGraphics();
+	void currentToolMovement(int x, int y), currerntToolDown(int x, int y), currrentToolUp(int x, int y), renderCurrrentToolIcon(), renderCurrentToolGraphics();
 private:
 	int currentToolID = 0;
 	EasyGraphics * ui;

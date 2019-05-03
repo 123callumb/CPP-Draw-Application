@@ -11,10 +11,10 @@ Control::~Control()
 
 void Control::onClick(int x, int y)
 {
-	panel->setSelectedControl(controlID);
+	GlobalSettings::getInstance()->setControlID(controlID);
 }
 
 void Control::onRender()
 { 
-	UI->drawBitmap((hovering || (panel->getSelectedControl() == controlID)) ? imageHover : image, area->getX(), area->getY(), area->getX1() - area->getX(), area->getY1() - area->getY(), UI->clWhite);
+	UI->drawBitmap((hovering || (GlobalSettings::getInstance()->getControl() == controlID)) ? imageHover : image, area->getX(), area->getY(), area->getX1() - area->getX(), area->getY1() - area->getY(), UI->clWhite);
 }

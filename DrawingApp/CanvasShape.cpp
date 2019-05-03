@@ -14,10 +14,9 @@ void CanvasShape::setFillColour(int colour)
 	fillColour = colour;
 }
 
-void CanvasShape::setOutlineColour(int colour, int thickness)
+void CanvasShape::setOutlineColour(int colour)
 {
 	outlineColour = colour;
-	lineThickness = thickness;
 }
 
 
@@ -52,9 +51,8 @@ void CanvasShape::onRender() {
 		break;
 	}
 
-	// set it back to normal after this
-	UI->selectBackColour(UI->clBlack);
-	UI->setPenColour(UI->clBlack, 1);
+	UI->selectBackColour(GlobalSettings::getInstance()->getFillColour());
+	UI->setPenColour(GlobalSettings::getInstance()->getOutlineColour(), 2);
 }
 
 void CanvasShape::onClick(int x, int y)

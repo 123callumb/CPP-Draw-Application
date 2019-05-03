@@ -3,6 +3,7 @@
 #include "MenuUI.h"
 #include "Tools.h"
 #include "Canvas.h"
+#include "GlobalSettings.h"
 
 using namespace std;
 

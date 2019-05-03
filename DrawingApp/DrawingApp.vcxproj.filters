@@ -69,6 +69,15 @@
     <ClInclude Include="SaveTool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="LoadTool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalSettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PenTool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EasyGraphics.cpp">
@@ -126,6 +135,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SaveTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalSettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PenTool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -206,6 +224,15 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Icon_FillLine.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Icon_Bin.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Btn_Pen.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Btn_Pen_Hover.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

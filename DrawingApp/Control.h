@@ -1,6 +1,7 @@
 #pragma once
 #include "Element.h"
 #include "ControlPanel.h"
+#include "GlobalSettings.h"
 
 using namespace std;
 

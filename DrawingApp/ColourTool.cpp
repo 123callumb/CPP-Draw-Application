@@ -15,10 +15,12 @@ void ColourTool::onClickDown(int x, int y)
 {
 	if (canvas->shapeExistsAt(x, y)) {
 		if (outline) {
-			canvas->fillOutline(canvas->getShapeIndexAt(x, y), colour, 2); // thickness is defaultto 2 for now until I implement a thickness meter.
+			GlobalSettings::getInstance()->setOutlineColour(colour);
+			canvas->fillOutline(canvas->getShapeIndexAt(x, y)); // thickness is defaultto 2 for now until I implement a thickness meter.
 		}
 		else {
-			canvas->fillShape(canvas->getShapeIndexAt(x, y), colour);
+			GlobalSettings::getInstance()->setFillColour(colour);
+			canvas->fillShape(canvas->getShapeIndexAt(x, y));
 		}
 	}
 }

@@ -23,7 +23,7 @@
     <ProjectGuid>{8A95D50A-363A-46E0-A9EE-AFE4323E20E8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>DrawingApp</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -156,9 +156,12 @@
     <ClInclude Include="DeleteTool.h" />
     <ClInclude Include="EasyGraphics.h" />
     <ClInclude Include="Element.h" />
+    <ClInclude Include="GlobalSettings.h" />
     <ClInclude Include="Interface.h" />
+    <ClInclude Include="LoadTool.h" />
     <ClInclude Include="MenuUI.h" />
     <ClInclude Include="MoveTool.h" />
+    <ClInclude Include="PenTool.h" />
     <ClInclude Include="SaveTool.h" />
     <ClInclude Include="ShapeTool.h" />
     <ClInclude Include="Tool.h" />
@@ -176,10 +179,13 @@
     <ClCompile Include="DeleteTool.cpp" />
     <ClCompile Include="EasyGraphics.cpp" />
     <ClCompile Include="Element.cpp" />
+    <ClCompile Include="GlobalSettings.cpp" />
     <ClCompile Include="Interface.cpp" />
+    <ClCompile Include="LoadTool.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MenuUI.cpp" />
     <ClCompile Include="MoveTool.cpp" />
+    <ClCompile Include="PenTool.cpp" />
     <ClCompile Include="SaveTool.cpp" />
     <ClCompile Include="ShapeTool.cpp" />
     <ClCompile Include="Tool.cpp" />
@@ -200,12 +206,15 @@
     <Image Include="Btn_Move_Hover.bmp" />
     <Image Include="Btn_Outline.bmp" />
     <Image Include="Btn_Outline_Hover.bmp" />
+    <Image Include="Btn_Pen.bmp" />
+    <Image Include="Btn_Pen_Hover.bmp" />
     <Image Include="Btn_Save.bmp" />
     <Image Include="Btn_Save_Hover.bmp" />
     <Image Include="Btn_Shapes.bmp" />
     <Image Include="Btn_Shapes_Hover.bmp" />
     <Image Include="Btn_Square.bmp" />
     <Image Include="Btn_Square_Hover.bmp" />
+    <Image Include="Icon_Bin.bmp" />
     <Image Include="Icon_Circle.bmp" />
     <Image Include="Icon_Fill.bmp" />
     <Image Include="Icon_FillLine.bmp" />

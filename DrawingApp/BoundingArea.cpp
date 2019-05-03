@@ -10,23 +10,18 @@ BoundingArea::~BoundingArea()
 
 bool BoundingArea::isInside(int xPos, int yPos)
 {
+	int sX = x < x1 ? x : x1;
+	int bX = sX == x ? x1 : x;
+	int sY = y < y1 ? y : y1;
+	int bY = sY == y ? y1 : y;
 
 	switch (shapeType)
 	{
-	case RECT:
-		return ((xPos >= x) && (xPos <= x1) && (yPos >= y) && (yPos < y1));
-		break;
 	case CIRCLE:
-		return ((xPos - x)^2 + (yPos - y)^2) < x1 - x;
+		return (pow(xPos - x, 2) + pow(yPos - y, 2)) < pow(x1 - x, 2);
 		break;
-	//case LINE: // I think this breaks a lot
-	//{
-	//	double dxy((y1 - y) / (x1 - x));
-	//	return (yPos == (dxy * xPos) + ((dxy * x) - y));
-	//	break;
-	//}
 	default:
-		return false;
+		return ((xPos >= sX) && (xPos <= bX) && (yPos >= sY) && (yPos < bY));
 		break;
 	} 
 

@@ -17,31 +17,32 @@ void Canvas::addToCanvas(BoundingArea * elementBounds, int fillColour, int outli
 
 void Canvas::render()
 {
-	for (int i = 0; i < canvasElements.size(); i++) {
-		canvasElements.at(i)->render();
-	}
+	// This seems more long windeed than a loop without the itterator?
+	for_each(canvasElements.begin(), canvasElements.end(), [](CanvasShape * shape) {
+		shape->render();
+	});
 }
 
 
 // I shold move these into their respective tool classes -----------------------------------------------------
 
-void Canvas::moveShape(int shapeIndex, int x, int y)
+void Canvas::moveShape(int shapeIndex, int x, int y, int dxy[3])
 {
 	BoundingArea * current = canvasElements.at(shapeIndex)->getBoudingArea();
 	BoundingArea * currentColision = canvasElements.at(shapeIndex)->getCollisionArea();
 
-	int x1 = x; //+(x - current->getX());
-	int y1 = y;// +(y - current->getY());
-	int x2 = x + (current->getX1() - current->getX());
-	int y2 = y + (current->getY1() - current->getY());
+	int x1 = x + dxy[0];
+	int y1 = y + dxy[1];
+	int x2 = x + dxy[2];
+	int y2 = y + dxy[3];
 	
 	currentColision->setAll(x1, y1, x2, y2);
 	current->setAll(x1, y1, x2, y2);
 }
 
-void Canvas::fillShape(int shapeIndex, int colour)
+void Canvas::fillShape(int shapeIndex)
 {
-	canvasElements.at(shapeIndex)->setFillColour(colour);
+	canvasElements.at(shapeIndex)->setFillColour(GlobalSettings::getInstance()->getFillColour());
 }
 
 
@@ -51,9 +52,14 @@ void Canvas::deleteShape(int shapeIndex)
 	canvasElements.erase(canvasElements.begin() + shapeIndex);
 }
 
-void Canvas::fillOutline(int shapeIndex, int colour, int thickness)
+void Canvas::clear()
 {
-	canvasElements.at(shapeIndex)->setOutlineColour(colour, thickness);
+	canvasElements.erase(canvasElements.begin(), canvasElements.end());
+}
+
+void Canvas::fillOutline(int shapeIndex)
+{
+	canvasElements.at(shapeIndex)->setOutlineColour(GlobalSettings::getInstance()->getOutlineColour());
 }
 
 // ---------------------------------------------------------------------------------------------------
@@ -73,10 +79,10 @@ bool Canvas::shapeExistsAt(int x, int y)
 int Canvas::getShapeIndexAt(int x, int y)
 {
 	// ADD ASSERT HERE
+	bool exists(false);
 	int index(canvasElements.size() - 1);
-	CanvasShape * currentShape = canvasElements.at(index);
-	while (!currentShape->getBoudingArea()->isInside(x, y)) {
-		currentShape = canvasElements.at(index--);
+	while (!exists && index > -1) {
+		exists = canvasElements.at(index--)->getBoudingArea()->isInside(x, y);
 	}
 	return index + 1;
 }

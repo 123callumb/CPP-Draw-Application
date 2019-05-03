@@ -30,7 +30,7 @@ void Interface::onDraw() {
 void Interface::onMouseMove(UINT nFlags, int x, int y)
 {
 	controlMenu.hoverInteraction(x, y);
-	tools.currentToolMovement(x, y, controlMenu.getSelectedControl());
+	tools.currentToolMovement(x, y);
 	onDraw();
 }
 

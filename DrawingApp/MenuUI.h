@@ -6,6 +6,7 @@
 #include "BoundingArea.h"
 #include "ControlExpand.h"
 #include "ControlColour.h"
+#include "GlobalSettings.h"
 
 using namespace std;
 

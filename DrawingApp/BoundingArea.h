@@ -1,4 +1,5 @@
 #pragma once
+#include <math.h>
 // This is a bounding area surrouned by an element, used for seeing if the mouse is inside of the object.
 class BoundingArea
 {

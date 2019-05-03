@@ -55,25 +55,25 @@ void ShapeTool::renderGraphics() {
 
 void ShapeTool::drawRect()
 {
-	UI->selectBackColour(UI->clBlack);
 	UI->drawRectangle(s[0], s[1], c[0] - s[0], c[1] - s[1], true);
 }
 
 void ShapeTool::drawCricle()
 {
-	UI->selectBackColour(UI->clBlack);
 	UI->drawCircle(s[0], s[1], c[0] - s[0], true);
 }
 
 void ShapeTool::drawLine()
 {
-	UI->setPenColour(UI->clBlack, 1);
 	UI->drawLine(s[0], s[1], c[0], c[1]);
 }
 
 // This will create the shape and add it to the canvas.
 void ShapeTool::createShape()
 {
-	canvas->addToCanvas(new BoundingArea(s[0], s[1], e[0], e[1], shapeType), EasyGraphics::clBlack, EasyGraphics::clBlack);
+	// This stops the drawing of 0px objects 
+	if (s[0] != e[0] && s[1] != e[1]) {
+		canvas->addToCanvas(new BoundingArea(s[0], s[1], e[0], e[1], shapeType), GlobalSettings::getInstance()->getFillColour(), GlobalSettings::getInstance()->getOutlineColour());
+	}
 }
 
