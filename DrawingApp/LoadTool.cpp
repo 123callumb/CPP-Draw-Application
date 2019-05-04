@@ -19,7 +19,21 @@ void LoadTool::onClickDown(int x, int y)
 		while (!savedFile.eof()) {
 			int shapeType, fColour, oColour, xPos, yPos, xPos1, yPos1;
 			savedFile >> shapeType >> fColour >> oColour >> xPos >> yPos >> xPos1 >> yPos1;
-			canvas->addToCanvas(new BoundingArea(xPos, yPos, xPos1, yPos1, shapeType), fColour, oColour);
+			if (shapeType == BoundingArea::SCRIBBLE) {
+				int pointCount;
+				savedFile >> pointCount;
+				vector<CanvasScribble::Point> points;
+				for (int i = 0; i < pointCount; i++) {
+					int pX, pY;
+					savedFile >> pX >> pY;
+					points.push_back({ pX, pY });
+				}
+				canvas->addScribble(points, new BoundingArea(xPos, yPos, xPos1, yPos1, shapeType), oColour);
+			}
+			else {
+				canvas->addToCanvas(new BoundingArea(xPos, yPos, xPos1, yPos1, shapeType), fColour, oColour);
+			}
+			
 		}
 		savedFile.close();
 	}

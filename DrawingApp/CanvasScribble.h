@@ -15,6 +15,8 @@ public:
 
 	CanvasScribble(EasyGraphics * currentInterface, BoundingArea * shapeArea, int outlineColour, vector<Point> points);
 	~CanvasScribble();
+
+	inline vector<Point> getPoints();
 protected:
 	inline void onRender();
 private:
@@ -25,9 +27,15 @@ inline void CanvasScribble::onRender()
 {
 	UI->setPenColour(outlineColour, lineThickness);
 	for (int i = 1; i < linePoints.size(); i++){
-		UI->drawLine(linePoints.at(i - 1).x, linePoints.at(i - 1).y, linePoints.at(i).x, linePoints.at(i).y);
+		UI->drawLine(area->getX() + linePoints.at(i - 1).x,area->getY() + linePoints.at(i - 1).y, area->getX() + linePoints.at(i).x, area->getY() + linePoints.at(i).y);
 	}
 	UI->setPenColour(GlobalSettings::getInstance()->getOutlineColour(), lineThickness);
 }
+
+inline vector<CanvasScribble::Point> CanvasScribble::getPoints()
+{
+	return linePoints;
+}
+
 
 

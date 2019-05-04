@@ -19,8 +19,10 @@ void PenTool::onClickDown(int x, int y)
 
 void PenTool::onClickUp(int x, int y)
 {
-	canvas->addScribble(linePoints, new BoundingArea(sX, sY, bX, bY, BoundingArea::RECT), GlobalSettings::getInstance()->getOutlineColour());
-	linePoints.clear();
+	if (bX) { // BX is 0 when no points are added,  so theres no need to call this method.
+		canvas->addScribble(linePoints, new BoundingArea(sX, sY, bX, bY, BoundingArea::SCRIBBLE), GlobalSettings::getInstance()->getOutlineColour());
+		linePoints.clear();
+	}
 	sX = INT_MAX;
 	sY = INT_MAX;
 	bX = 0;

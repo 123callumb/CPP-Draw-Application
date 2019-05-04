@@ -28,7 +28,16 @@ void SaveTool::onClickDown(int x, int y)
 			saveFile << s.at(i)->getBoudingArea()->getX() << " ";
 			saveFile << s.at(i)->getBoudingArea()->getY() << " ";
 			saveFile << s.at(i)->getBoudingArea()->getX1() << " ";
-			saveFile << s.at(i)->getBoudingArea()->getY1() << "\n";
+			saveFile << s.at(i)->getBoudingArea()->getY1() << " ";
+			// If the rest of the shape is a scribble then store all the line points after it.
+			if (s.at(i)->getBoudingArea()->getShapeType() == BoundingArea::SCRIBBLE) {
+				vector<CanvasScribble::Point> scribPoints = dynamic_cast<CanvasScribble*>(s.at(i))->getPoints();
+				saveFile << scribPoints.size() << " "; // Store the amount of points so loading the file is easier.
+				for (int p = 0; p < scribPoints.size(); p++) {
+					saveFile <<  scribPoints.at(p).x  + s.at(i)->getBoudingArea()->getX() << " " << scribPoints.at(p).y + s.at(i)->getBoudingArea()->getY() << " ";
+				}
+			}
+			saveFile << "\n";
 		}
 		saveFile.close();
 	}

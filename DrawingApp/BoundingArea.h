@@ -14,7 +14,7 @@ public:
 
 	const BoundingArea operator+ (const BoundingArea & rhs) const;
 
-	static const int RECT = 0, CIRCLE = 1, LINE = 2;
+	static const int RECT = 0, CIRCLE = 1, LINE = 2, SCRIBBLE = 3;
 protected:
 	int x, y, x1, y1, shapeType;
 };
