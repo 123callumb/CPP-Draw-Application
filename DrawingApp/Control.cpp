@@ -1,6 +1,6 @@
 #include "Control.h"
 
-Control::Control(EasyGraphics *currentInterface, BoundingArea * bArea, ControlPanel * currentPanel, const wchar_t *filename, const wchar_t *filenameSelected, int ID) : Element(currentInterface, bArea), panel(currentPanel),  image(filename), imageHover(filenameSelected), controlID(ID)
+Control::Control(EasyGraphics *currentInterface, BoundingArea * bArea, const wchar_t *filename, const wchar_t *filenameSelected, int ID) : Element(currentInterface, bArea),  image(filename), imageHover(filenameSelected), controlID(ID)
 {
 }
 

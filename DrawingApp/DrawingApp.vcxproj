@@ -153,7 +153,6 @@
     <ClInclude Include="Control.h" />
     <ClInclude Include="ControlColour.h" />
     <ClInclude Include="ControlExpand.h" />
-    <ClInclude Include="ControlPanel.h" />
     <ClInclude Include="DeleteTool.h" />
     <ClInclude Include="EasyGraphics.h" />
     <ClInclude Include="Element.h" />
@@ -177,7 +176,6 @@
     <ClCompile Include="Control.cpp" />
     <ClCompile Include="ControlColour.cpp" />
     <ClCompile Include="ControlExpand.cpp" />
-    <ClCompile Include="ControlPanel.cpp" />
     <ClCompile Include="DeleteTool.cpp" />
     <ClCompile Include="EasyGraphics.cpp" />
     <ClCompile Include="Element.cpp" />
