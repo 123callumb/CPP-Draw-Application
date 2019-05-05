@@ -145,10 +145,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ActionTool.h" />
     <ClInclude Include="BoundingArea.h" />
     <ClInclude Include="Canvas.h" />
     <ClInclude Include="CanvasScribble.h" />
     <ClInclude Include="CanvasShape.h" />
+    <ClInclude Include="ColourPicker.h" />
+    <ClInclude Include="ColourPickerUI.h" />
     <ClInclude Include="ColourTool.h" />
     <ClInclude Include="Control.h" />
     <ClInclude Include="ControlColour.h" />
@@ -168,17 +171,16 @@
     <ClInclude Include="Tools.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ActionTool.cpp" />
     <ClCompile Include="BoundingArea.cpp" />
     <ClCompile Include="Canvas.cpp" />
-    <ClCompile Include="CanvasScribble.cpp" />
     <ClCompile Include="CanvasShape.cpp" />
+    <ClCompile Include="ColourPickerUI.cpp" />
     <ClCompile Include="ColourTool.cpp" />
-    <ClCompile Include="Control.cpp" />
     <ClCompile Include="ControlColour.cpp" />
     <ClCompile Include="ControlExpand.cpp" />
     <ClCompile Include="DeleteTool.cpp" />
     <ClCompile Include="EasyGraphics.cpp" />
-    <ClCompile Include="Element.cpp" />
     <ClCompile Include="GlobalSettings.cpp" />
     <ClCompile Include="Interface.cpp" />
     <ClCompile Include="LoadTool.cpp" />
@@ -197,6 +199,8 @@
     <Image Include="Btn_Circle.bmp" />
     <Image Include="Btn_Circle_Hover.bmp" />
     <Image Include="Btn_Fill.bmp" />
+    <Image Include="Btn_FillColour.bmp" />
+    <Image Include="Btn_FillColour_Hover.bmp" />
     <Image Include="Btn_Fill_Hover.bmp" />
     <Image Include="Btn_Line.bmp" />
     <Image Include="Btn_Line_Hover.bmp" />
@@ -205,6 +209,8 @@
     <Image Include="Btn_Move.bmp" />
     <Image Include="Btn_Move_Hover.bmp" />
     <Image Include="Btn_Outline.bmp" />
+    <Image Include="Btn_OutlineColour.bmp" />
+    <Image Include="Btn_OutlineColour_Hover.bmp" />
     <Image Include="Btn_Outline_Hover.bmp" />
     <Image Include="Btn_Pen.bmp" />
     <Image Include="Btn_Pen_Hover.bmp" />

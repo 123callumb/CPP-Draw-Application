@@ -33,6 +33,10 @@ inline void Tool::renderIcon()
 	UI->drawBitmap(iconFile, iconX + 10, iconY + 10, 20, 20, UI->clWhite);
 }
 
+inline void Tool::onClickUp(int x, int y)
+{
+}
+
 
 inline void Tool::updateMouseIcon(int x, int y)
 {

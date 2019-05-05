@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <algorithm>
 #include "Tool.h"
 #include "EasyGraphics.h"
 #include "ShapeTool.h"
@@ -11,13 +12,14 @@
 #include "LoadTool.h"
 #include "PenTool.h"
 #include "GlobalSettings.h"
+#include "ColourPicker.h"
 // This is just a list of all the tools. This class serves as a connector to the menu and the canvas.
 using namespace std;
 
 class Tools
 {
 public:
-	Tools(EasyGraphics * currentInterface, Canvas * currentCanvas);
+	Tools(EasyGraphics * currentInterface, Canvas * currentCanvas, HINSTANCE currentInstance);
 	~Tools();
 	void currentToolMovement(int x, int y), currerntToolDown(int x, int y), currrentToolUp(int x, int y), renderCurrrentToolIcon(), renderCurrentToolGraphics();
 private:
@@ -25,5 +27,6 @@ private:
 	EasyGraphics * ui;
 	Canvas * canvas;
 	vector<Tool*> toolList;
+
 };
 

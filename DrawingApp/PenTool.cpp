@@ -33,6 +33,7 @@ void PenTool::onClickUp(int x, int y)
 void PenTool::renderGraphics()
 {
 	if (linePoints.size()) {
+		// TODO: itterator here
 		for (int i = 1; i < linePoints.size(); i++) {
 			UI->drawLine(linePoints.at(i - 1).x, linePoints.at(i - 1).y, linePoints.at(i).x, linePoints.at(i).y);
 		}

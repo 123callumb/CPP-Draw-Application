@@ -1,5 +1,6 @@
 #pragma once
 #include "EasyGraphics.h"
+
 // This is a singleton class that stores the current values of current colours and selected tools.
 class GlobalSettings
 {
@@ -12,15 +13,15 @@ private:
 	~GlobalSettings();
 	static GlobalSettings * instance;
 	CRITICAL_SECTION lock;
-	int currentFilllColour = EasyGraphics::clDarkGrey;
+	int currentFilllColour = EasyGraphics::clBlack;
 	int currentOutlineColour = EasyGraphics::clBlack;
 	int currentControlID = 0; // set as draw rectangle as defualt.
 };
 
+
 inline GlobalSettings::GlobalSettings() {
 	InitializeCriticalSection(&lock);
 }
-
 
 inline GlobalSettings * GlobalSettings::getInstance()
 {
@@ -64,3 +65,4 @@ inline void GlobalSettings::setControlID(int controlID)
 	currentControlID = controlID;
 	LeaveCriticalSection(&lock);
 }
+

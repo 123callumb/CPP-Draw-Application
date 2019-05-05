@@ -21,9 +21,6 @@
     <ClInclude Include="Interface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Control.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Element.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -78,6 +75,18 @@
     <ClInclude Include="CanvasScribble.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ActionTool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ColourPicker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ColourPickerUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Control.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EasyGraphics.cpp">
@@ -87,12 +96,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Control.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Element.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ControlExpand.cpp">
@@ -143,7 +146,10 @@
     <ClCompile Include="PenTool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CanvasScribble.cpp">
+    <ClCompile Include="ActionTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ColourPickerUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -233,6 +239,18 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Btn_Pen_Hover.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Btn_FillColour.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Btn_FillColour_Hover.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Btn_OutlineColour.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Btn_OutlineColour_Hover.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -22,6 +22,17 @@ protected:
 	BoundingArea * collisionArea; // To start with they have the same pointer address unless the collision area is altered
 };
 
+inline Element::Element(EasyGraphics * uiTool, BoundingArea * bArea) : UI(uiTool), area(bArea)
+{
+	collisionArea = new BoundingArea(bArea->getX(), bArea->getY(), bArea->getX1(), bArea->getY1(), bArea->getShapeType());
+}
+
+inline Element::~Element() {
+	//delete UI;
+	//delete area;
+	//delete collisionArea;
+}
+
 inline void Element::render() {
 	this->onRender();
 }

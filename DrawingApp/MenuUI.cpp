@@ -8,13 +8,17 @@ MenuUI::MenuUI(EasyGraphics *currrentUI)  : ui(currrentUI)
 		shapesExpandButton->addControl(new Control(ui, new BoundingArea(controlW * (i/2), controlH, (controlW * (i/2)) + controlW, controlH * 2, BoundingArea::RECT), controlTextures[i], controlTextures[i+1], i/2 - 1));
 	controls.push_back(shapesExpandButton); 
 
-	for (size_t i = 8; i < 22; i+=2)
+	for (size_t i = 8; i < 26; i+=2)
 		controls.push_back(new Control(ui, new BoundingArea(0, (controlH * ((i/2) -2)), controlW, ((controlH * ((i/2) - 2)) + controlH), BoundingArea::RECT), controlTextures[i], controlTextures[i + 1], i/2 - 1));
 }
 
 
 MenuUI::~MenuUI()
 {
+	//delete ui;
+	//for_each(controls.begin(), controls.end(), [](Control * control) {
+	//	delete control;
+	//});
 }
 
 void MenuUI::onDraw()
@@ -35,6 +39,11 @@ void MenuUI::hoverInteraction(int x, int y)
 {
 	for (size_t i = 0; i < controls.size(); i++)
 		controls.at(i)->hover(x, y);
+}
+
+BoundingArea MenuUI::getMenuArea()
+{
+	return controls.size() ? BoundingArea(controls.at(0)->getBoudingArea()->getX(), controls.at(0)->getBoudingArea()->getY(), controls.at(controls.size() - 1)->getBoudingArea()->getX1(), controls.at(controls.size() - 1)->getBoudingArea()->getY1(), BoundingArea::RECT) : BoundingArea(0, 0, 0, 0, 0);
 }
 
 

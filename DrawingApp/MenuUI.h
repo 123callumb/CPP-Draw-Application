@@ -1,6 +1,7 @@
 #pragma once
 #include "EasyGraphics.h"
 #include <vector>
+#include <algorithm>
 #include "Control.h"
 #include "BoundingArea.h"
 #include "ControlExpand.h"
@@ -16,12 +17,13 @@ public:
 	MenuUI(EasyGraphics *currentUI);
 	~MenuUI();
 	void onDraw(), clickInteraction(int x, int y), hoverInteraction(int x, int y);
+	BoundingArea getMenuArea();
 private:
 	EasyGraphics *ui;
 	vector<Control*> controls;
 	const int controlW = 68, controlH = 55;
 
-	const wchar_t * controlTextures[22] = { 
+	const wchar_t * controlTextures[26] = { 
 		L"Btn_Shapes.bmp", L"Btn_Shapes_Hover.bmp",
 		L"Btn_Square.bmp", L"Btn_Square_Hover.bmp",
 		L"Btn_Circle.bmp", L"Btn_Circle_Hover.bmp",
@@ -33,6 +35,8 @@ private:
 		L"Btn_Load.bmp", L"Btn_Load_Hover.bmp",
 		L"Btn_Fill.bmp", L"Btn_Fill_Hover.bmp",
 		L"Btn_Outline.bmp", L"Btn_Outline_Hover.bmp",
+		L"Btn_FillColour.bmp", L"Btn_FillColour_Hover.bmp",
+		L"Btn_OutlineColour.bmp", L"Btn_OutlineColour_Hover.bmp"
 	};
 };
 

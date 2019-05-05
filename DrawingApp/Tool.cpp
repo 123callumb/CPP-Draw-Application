@@ -7,6 +7,9 @@ Tool::Tool(EasyGraphics * currentInterface, const wchar_t * iconName, Canvas * c
 
 Tool::~Tool()
 {
+	/*delete UI;
+	delete iconFile;
+	delete canvas;*/
 }
 
 

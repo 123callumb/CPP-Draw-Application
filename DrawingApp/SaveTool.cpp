@@ -21,7 +21,7 @@ void SaveTool::onClickDown(int x, int y)
 		vector<CanvasShape*> s = canvas->getCanvasElements();
 		saveFile.clear();
 		//TODO: itterator here
-		for (int i = 0; i < s.size(); i++) {
+		for (size_t i = 0; i < s.size(); i++) {
 			saveFile << s.at(i)->getBoudingArea()->getShapeType() << " ";
 			saveFile << s.at(i)->getFillColour() << " ";
 			saveFile << s.at(i)->getOutlineColour() << " ";

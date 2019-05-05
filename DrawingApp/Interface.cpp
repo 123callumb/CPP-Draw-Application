@@ -1,11 +1,11 @@
 #include "Interface.h"
 
 
-Interface::Interface(HINSTANCE hInstance)
+Interface::Interface(HINSTANCE hInstance) : hInst(hInstance)
 {
 	setImmediateDrawMode(false);
 
-	create(hInstance, 1024, 720, 120, true);
+	create(hInst, 1024, 720, 120, true);
 }
 
 Interface::~Interface()
@@ -37,12 +37,17 @@ void Interface::onMouseMove(UINT nFlags, int x, int y)
 void Interface::onLButtonDown(UINT nFlags, int x, int y)
 {
 	controlMenu.clickInteraction(x, y);
-	tools.currerntToolDown(x, y);
+	// Make sure we dont activate the tool while inside of the menu area.
+	if (!controlMenu.getMenuArea().isInside(x, y)) {
+		tools.currerntToolDown(x, y);
+	}
 	onDraw();
 }
 
 void Interface::onLButtonUp(UINT nFlags, int x, int y)
 {
-	tools.currrentToolUp(x, y);
+	if (!controlMenu.getMenuArea().isInside(x, y)) {
+		tools.currrentToolUp(x, y);
+	}
 	onDraw();
 }
