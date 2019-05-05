@@ -7,6 +7,10 @@ Canvas::Canvas(EasyGraphics * currentInterface) : UI(currentInterface)
 
 Canvas::~Canvas()
 {
+	for_each(canvasElements.begin(), canvasElements.end(), [](Element * p) {
+		delete p;
+	});
+	canvasElements.erase(canvasElements.begin(), canvasElements.end());
 }
 
 void Canvas::addToCanvas(BoundingArea * elementBounds, int fillColour, int outlineColour) 
@@ -73,7 +77,7 @@ void Canvas::fillOutline(int shapeIndex)
 bool Canvas::shapeExistsAt(int x, int y)
 {
 	bool exists(false);
-	int index(canvasElements.size() - 1);
+	int index((int)canvasElements.size() - 1);
 	while (!exists && index > -1) {
 		exists = canvasElements.at(index--)->getBoudingArea()->isInside(x, y);
 	}
@@ -86,7 +90,7 @@ int Canvas::getShapeIndexAt(int x, int y)
 {
 	// ADD ASSERT HERE
 	bool exists(false);
-	int index(canvasElements.size() - 1);
+	int index((int)canvasElements.size() - 1);
 	while (!exists && index > -1) {
 		exists = canvasElements.at(index--)->getBoudingArea()->isInside(x, y);
 	}

@@ -19,11 +19,10 @@ Tools::Tools(EasyGraphics * currentInterface, Canvas * currentCanvas, HINSTANCE 
 
 Tools::~Tools()
 {
-	//delete canvas;
-	//delete ui;
-	//for_each(toolList.end(), toolList.begin(), [](Tool * tool) {
-	//	delete tool;
-	//});
+	for_each(toolList.begin(), toolList.end(), [](Tool * p) {
+		delete p;
+	});
+	toolList.erase(toolList.begin(), toolList.end());
 }
 
 void Tools::currentToolMovement(int x, int y)

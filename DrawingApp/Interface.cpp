@@ -51,3 +51,10 @@ void Interface::onLButtonUp(UINT nFlags, int x, int y)
 	}
 	onDraw();
 }
+
+void Interface::onDestroy() {
+	/*tools.~Tools();
+	controlMenu.~MenuUI();
+	canvas.~Canvas();*/
+	EasyGraphics::onDestroy();
+}

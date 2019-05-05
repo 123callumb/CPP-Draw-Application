@@ -28,7 +28,7 @@ inline Element::Element(EasyGraphics * uiTool, BoundingArea * bArea) : UI(uiTool
 }
 
 inline Element::~Element() {
-	//delete UI;
+	// I can't use these it causes problems, I just don't know enough to even begin to understand what is going off here.
 	//delete area;
 	//delete collisionArea;
 }

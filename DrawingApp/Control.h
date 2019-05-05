@@ -23,6 +23,8 @@ inline Control::Control(EasyGraphics *currentInterface, BoundingArea * bArea, co
 
 inline Control::~Control()
 {
+	//delete image;
+	//delete imageHover;
 }
 
 

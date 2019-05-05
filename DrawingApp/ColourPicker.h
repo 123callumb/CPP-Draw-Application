@@ -12,7 +12,7 @@ protected:
 	inline void onMove(int x, int y);
 private:
 	HINSTANCE currentInstance;
-	bool isOutline = false;
+	bool isOutline = false, isOpen = false;
 };
 
 inline ColourPicker::ColourPicker(EasyGraphics * currentInterface, const wchar_t * iconName, Canvas * canvas, HINSTANCE currentInstance, bool forOutline) : Tool(currentInterface, iconName, canvas), currentInstance(currentInstance), isOutline(forOutline)
@@ -25,9 +25,10 @@ inline ColourPicker::~ColourPicker()
 
 inline void ColourPicker::onClickDown(int x, int y)
 {
-	ColourPickerUI * picker = new ColourPickerUI(isOutline);
-	picker->prepareOpen(currentInstance);
-	picker->waitForClose();
+	if (!isOpen) {
+		ColourPickerUI * picker = new ColourPickerUI(isOutline, isOpen);
+		picker->prepareOpen(currentInstance);
+	}
 }
 
 inline void ColourPicker::onClickUp(int x, int y)

@@ -25,5 +25,6 @@ private:
 	void onMouseMove(UINT nFlags, int x, int y);
 	void onLButtonDown(UINT nFlags, int x, int y);
 	void onLButtonUp(UINT nFlags, int x, int y);
+	void onDestroy();
 };
 

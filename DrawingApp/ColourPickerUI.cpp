@@ -2,7 +2,7 @@
 
 
 
-ColourPickerUI::ColourPickerUI(bool forOutline)
+ColourPickerUI::ColourPickerUI(bool forOutline, bool &isOpen) : open(isOpen)
 {
 	setImmediateDrawMode(false);
 	//SetWindowPos(getHWND(), NULL, 720, 200, 0, 0, SWP_NOZORDER | SWP_NOSIZE); // Err idk why ths doesn't work
@@ -67,6 +67,7 @@ void ColourPickerUI::onLButtonDown(UINT nFlags, int x, int y)
 
 void ColourPickerUI::onDestroy()
 {
+	open = false;
 	waitForClose();
 	EasyGraphics::onDestroy();
 	delete this;

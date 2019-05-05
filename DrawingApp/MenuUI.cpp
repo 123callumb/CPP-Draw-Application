@@ -15,10 +15,11 @@ MenuUI::MenuUI(EasyGraphics *currrentUI)  : ui(currrentUI)
 
 MenuUI::~MenuUI()
 {
-	//delete ui;
-	//for_each(controls.begin(), controls.end(), [](Control * control) {
-	//	delete control;
-	//});
+
+	for_each(controls.begin(), controls.end(), [](Control * p) {
+		delete p;
+	});
+	controls.erase(controls.begin(), controls.end());
 }
 
 void MenuUI::onDraw()

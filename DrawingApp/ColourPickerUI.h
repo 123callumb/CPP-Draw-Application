@@ -9,13 +9,13 @@ class ColourPickerUI :
 	public EasyGraphics
 {
 public:
-	ColourPickerUI(bool forOutline);
+	ColourPickerUI(bool forOutline, bool &isOpen);
 	~ColourPickerUI();
 	void prepareOpen(HINSTANCE hInstance);
 	bool isOpen();
 private:
 	void onCreate(), onDraw(), onMouseMove(UINT nFlags, int x, int y), onLButtonDown(UINT nFlags, int x, int y), onDestroy();
-	bool open = false;
+	bool &open;
 	bool isOutline = false;
 	vector<ControlColour*> controlColours;
 	int colourList[12] = {
