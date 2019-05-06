@@ -1,6 +1,12 @@
 #pragma once
 #include "Tool.h"
 #include "CanvasShape.h"
+
+struct SelectData{
+	int id;
+	int dxy[4];
+};
+
 class MoveTool :
 	public Tool
 {
@@ -11,7 +17,8 @@ public:
 protected:
 	void onMove(int x, int y);
 private:
-	int shapeID = -1; 
-	int dxy[4];
+	int moving = false; 
+	vector<SelectData> selectedItems;
+	BoundingArea selectedBounds = BoundingArea(INT_MAX, INT_MAX, 0, 0, BoundingArea::RECT);
 };
 

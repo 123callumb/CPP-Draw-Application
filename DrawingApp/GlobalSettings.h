@@ -7,7 +7,8 @@ class GlobalSettings
 public:
 	inline static GlobalSettings * getInstance();
 	inline int getFillColour(), getOutlineColour(), getControl();
-	void setFillColour(int colour), setOutlineColour(int colour), setControlID(int controlID);
+	inline bool isShiftDown();
+	void setFillColour(int colour), setOutlineColour(int colour), setControlID(int controlID), setShiftDown(bool value);
 private:
 	GlobalSettings();
 	~GlobalSettings();
@@ -16,6 +17,7 @@ private:
 	int currentFilllColour = EasyGraphics::clBlack;
 	int currentOutlineColour = EasyGraphics::clBlack;
 	int currentControlID = 0; // set as draw rectangle as defualt.
+	bool shiftDown = false;
 };
 
 
@@ -45,6 +47,11 @@ inline int GlobalSettings::getControl()
 	return currentControlID;
 }
 
+inline bool GlobalSettings::isShiftDown()
+{
+	return shiftDown;
+}
+
 inline void GlobalSettings::setFillColour(int colour)
 {
 	EnterCriticalSection(&lock);
@@ -63,6 +70,13 @@ inline void GlobalSettings::setControlID(int controlID)
 {
 	EnterCriticalSection(&lock);
 	currentControlID = controlID;
+	LeaveCriticalSection(&lock);
+}
+
+inline void GlobalSettings::setShiftDown(bool value)
+{
+	EnterCriticalSection(&lock);
+	shiftDown = value;
 	LeaveCriticalSection(&lock);
 }
 

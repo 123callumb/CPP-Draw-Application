@@ -12,5 +12,7 @@ public:
 	void onClickDown(int x, int y), onClickUp(int x, int y), renderGraphics();
 protected:
 	virtual void onMove(int x, int y);
+private:
+	bool error = false;
 };
 

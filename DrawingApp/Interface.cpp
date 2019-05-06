@@ -52,9 +52,19 @@ void Interface::onLButtonUp(UINT nFlags, int x, int y)
 	onDraw();
 }
 
-void Interface::onDestroy() {
-	/*tools.~Tools();
-	controlMenu.~MenuUI();
-	canvas.~Canvas();*/
-	EasyGraphics::onDestroy();
+
+void Interface::onKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
+{
+	if (nChar == VK_SHIFT || nChar == VK_SHIFT) {
+		GlobalSettings::getInstance()->setShiftDown(true);
+	}
+	clrscr(clWhite);
+}
+
+void Interface::onKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
+{
+	if (nChar == VK_SHIFT || nChar == VK_SHIFT) {
+		GlobalSettings::getInstance()->setShiftDown(false);
+	}
+	clrscr(clWhite);
 }

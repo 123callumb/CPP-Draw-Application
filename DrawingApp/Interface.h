@@ -25,6 +25,8 @@ private:
 	void onMouseMove(UINT nFlags, int x, int y);
 	void onLButtonDown(UINT nFlags, int x, int y);
 	void onLButtonUp(UINT nFlags, int x, int y);
-	void onDestroy();
+	// For tools that use shift as a function
+	void onKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);  
+	void onKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags);
 };
 
