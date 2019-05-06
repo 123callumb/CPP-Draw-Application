@@ -22,6 +22,16 @@ private:
 	const wchar_t * iconFile;
 };
 
+
+inline Tool::Tool(EasyGraphics * currentInterface, const wchar_t * iconName, Canvas * currentCanvas) : UI(currentInterface), iconFile(iconName), canvas(currentCanvas)
+{
+}
+
+inline Tool::~Tool()
+{
+}
+
+
 inline void Tool::move(int x, int y) 
 {
 	onMove(x, y);

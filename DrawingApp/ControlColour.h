@@ -4,7 +4,7 @@ class ControlColour :
 	public Control
 {
 public:
-	ControlColour(Control control, int colour, bool isOutline);
+	ControlColour(EasyGraphics * currentInterface, int x, int y, int x1, int y1, int shapeType, const wchar_t * imageFile, const wchar_t * imageHover, int colour, bool isOutline);
 	~ControlColour();
 protected: 
 	void onRender(), onClick(int x, int y);

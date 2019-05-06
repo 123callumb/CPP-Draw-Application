@@ -29,10 +29,10 @@ void LoadTool::onClickDown(int x, int y)
 						savedFile >> pX >> pY;
 						points.push_back({ pX, pY });
 					}
-					canvas->addScribble(points, new BoundingArea(xPos, yPos, xPos1, yPos1, shapeType), oColour);
+					canvas->addScribble(points, xPos, yPos, xPos1, yPos1, shapeType, oColour);
 				}
 				else {
-					canvas->addToCanvas(new BoundingArea(xPos, yPos, xPos1, yPos1, shapeType), fColour, oColour);
+					canvas->addToCanvas(xPos, yPos, xPos1, yPos1, shapeType, fColour, oColour);
 				}
 
 			}

@@ -19,10 +19,6 @@ Tools::Tools(EasyGraphics * currentInterface, Canvas * currentCanvas, HINSTANCE 
 
 Tools::~Tools()
 {
-	for_each(toolList.begin(), toolList.end(), [](Tool * p) {
-		delete p;
-	});
-	toolList.erase(toolList.begin(), toolList.end());
 }
 
 void Tools::currentToolMovement(int x, int y)
@@ -57,4 +53,12 @@ void Tools::renderCurrentToolGraphics()
 {
 	if (currentToolID >= 0) 
 		toolList.at(currentToolID)->renderGraphics();
+}
+
+void Tools::onClose()
+{
+	for_each(toolList.begin(), toolList.end(), [](Tool * p) {
+		delete p;
+	});
+	toolList.erase(toolList.begin(), toolList.end());
 }

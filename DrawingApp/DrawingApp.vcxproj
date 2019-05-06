@@ -145,7 +145,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ActionTool.h" />
     <ClInclude Include="BoundingArea.h" />
     <ClInclude Include="Canvas.h" />
     <ClInclude Include="CanvasScribble.h" />
@@ -171,7 +170,6 @@
     <ClInclude Include="Tools.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ActionTool.cpp" />
     <ClCompile Include="BoundingArea.cpp" />
     <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="CanvasShape.cpp" />
@@ -190,7 +188,6 @@
     <ClCompile Include="PenTool.cpp" />
     <ClCompile Include="SaveTool.cpp" />
     <ClCompile Include="ShapeTool.cpp" />
-    <ClCompile Include="Tool.cpp" />
     <ClCompile Include="Tools.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -8,7 +8,7 @@ class CanvasShape :
 	public Element
 {
 public:
-	CanvasShape(EasyGraphics * currentInterface, BoundingArea * shapeArea, int fillColour, int outlineColour);
+	CanvasShape(EasyGraphics * currentInterface, int x, int y, int x1, int y1, int shapeType, int fillColour, int outlineColour);
 	~CanvasShape();
 	void setFillColour(int colour), setOutlineColour(int colour);
 	int getFillColour(), getOutlineColour();

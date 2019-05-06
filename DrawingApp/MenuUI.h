@@ -16,7 +16,7 @@ class MenuUI
 public:
 	MenuUI(EasyGraphics *currentUI);
 	~MenuUI();
-	void onDraw(), clickInteraction(int x, int y), hoverInteraction(int x, int y);
+	void onDraw(), clickInteraction(int x, int y), hoverInteraction(int x, int y), onClose();
 	BoundingArea getMenuArea();
 private:
 	EasyGraphics *ui;

@@ -9,7 +9,7 @@ ColourPickerUI::ColourPickerUI(bool forOutline, bool &isOpen) : open(isOpen)
 	for (size_t i = 0; i < 12; i++) {
 		int colNum = (i % 3);
 		int rowNum = (i - colNum) / 3;
-		controlColours.push_back(new ControlColour(Control(this, new BoundingArea(colNum * 68, rowNum * 55, (colNum * 68) + 68, (rowNum * 55) + 55, BoundingArea::RECT), L"Btn_FillColour.bmp", L"Btn_FillColour_Hover.bmp", i), colourList[i], forOutline));
+		controlColours.push_back(new ControlColour(this, colNum * 68, rowNum * 55, (colNum * 68) + 68, (rowNum * 55) + 55, BoundingArea::RECT, L"Btn_FillColour.bmp", L"Btn_FillColour_Hover.bmp", colourList[i], forOutline));
 	}
 }
 

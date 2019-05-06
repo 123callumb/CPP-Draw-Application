@@ -2,7 +2,7 @@
 
 
 
-ControlColour::ControlColour(Control control, int colour, bool isOutline) : Control(control), colour(colour), outline(isOutline)
+ControlColour::ControlColour(EasyGraphics * currentInterface, int x, int y, int x1, int y1, int shapeType, const wchar_t * imageFile, const wchar_t * imageHover, int colour, bool isOutline) : Control(currentInterface, x, y, x1, y1, shapeType, imageFile, imageHover, -1), colour(colour), outline(isOutline)
 {
 }
 

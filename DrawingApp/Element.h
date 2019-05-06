@@ -6,7 +6,7 @@
 class Element
 {
 public:
-	Element(EasyGraphics* uiTool, BoundingArea * bArea);
+	Element(EasyGraphics* uiTool, int x, int y, int x1, int y1, int shapeType);
 	~Element();
 
 	inline void render(), click(int x, int y), hover(int x, int y);
@@ -22,15 +22,13 @@ protected:
 	BoundingArea * collisionArea; // To start with they have the same pointer address unless the collision area is altered
 };
 
-inline Element::Element(EasyGraphics * uiTool, BoundingArea * bArea) : UI(uiTool), area(bArea)
+inline Element::Element(EasyGraphics * uiTool, int x, int y, int x1, int y1, int shapeType) : UI(uiTool), area(new BoundingArea(x, y, x1, y1, shapeType)), collisionArea(new BoundingArea(x, y, x1, y1, shapeType))
 {
-	collisionArea = new BoundingArea(bArea->getX(), bArea->getY(), bArea->getX1(), bArea->getY1(), bArea->getShapeType());
 }
 
 inline Element::~Element() {
-	// I can't use these it causes problems, I just don't know enough to even begin to understand what is going off here.
-	//delete area;
-	//delete collisionArea;
+	delete area;
+	delete collisionArea;
 }
 
 inline void Element::render() {

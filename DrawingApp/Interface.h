@@ -13,12 +13,13 @@ class Interface :
 public:
 	Interface(HINSTANCE hInstance);
 	~Interface();
+	void onClose();
 private:
 	HINSTANCE hInst;
 
-	Canvas canvas = Canvas(this);
-	MenuUI controlMenu = MenuUI(this);
-	Tools tools = Tools(this, &canvas, hInst);
+	Canvas canvas;
+	MenuUI controlMenu;
+	Tools tools;
 
 	void onCreate();
 	void onDraw();

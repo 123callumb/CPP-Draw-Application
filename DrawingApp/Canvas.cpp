@@ -7,21 +7,17 @@ Canvas::Canvas(EasyGraphics * currentInterface) : UI(currentInterface)
 
 Canvas::~Canvas()
 {
-	for_each(canvasElements.begin(), canvasElements.end(), [](Element * p) {
-		delete p;
-	});
-	canvasElements.erase(canvasElements.begin(), canvasElements.end());
 }
 
-void Canvas::addToCanvas(BoundingArea * elementBounds, int fillColour, int outlineColour) 
+void Canvas::addToCanvas(int x, int y, int x1, int y1, int shapeType, int fillColour, int outlineColour)
 {
-	CanvasShape * newShape = new CanvasShape(UI, elementBounds, fillColour, outlineColour);
+	CanvasShape * newShape = new CanvasShape(UI, x, y, x1, y1, shapeType, fillColour, outlineColour);
 	canvasElements.push_back(newShape);
 }
 
-void Canvas::addScribble(vector<CanvasScribble::Point> points, BoundingArea * elementBouds, int outlineColour)
+void Canvas::addScribble(vector<CanvasScribble::Point> points, int x, int y, int x1, int y1, int shapeType, int outlineColour)
 {
-	CanvasScribble * newScribble = new CanvasScribble(UI, elementBouds, outlineColour, points);
+	CanvasScribble * newScribble = new CanvasScribble(UI, x, y, x1, y1, shapeType, outlineColour, points);
 	canvasElements.push_back(newScribble);
 }
 
@@ -100,4 +96,12 @@ int Canvas::getShapeIndexAt(int x, int y)
 const vector<CanvasShape*> Canvas::getCanvasElements()
 {
 	return canvasElements;
+}
+
+void Canvas::onClose()
+{
+	for_each(canvasElements.begin(), canvasElements.end(), [](Element * p) {
+		delete p;
+	});
+	canvasElements.erase(canvasElements.begin(), canvasElements.end());
 }

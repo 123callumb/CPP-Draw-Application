@@ -13,7 +13,7 @@ public:
 		int x, y; 
 	};
 
-	CanvasScribble(EasyGraphics * currentInterface, BoundingArea * shapeArea, int outlineColour, vector<Point> points);
+	CanvasScribble(EasyGraphics * currentInterface, int x, int y, int x1, int y1, int shapeType, int outlineColour, vector<Point> points);
 	~CanvasScribble();
 
 	inline vector<Point> getPoints();
@@ -23,7 +23,7 @@ private:
 	vector<Point> linePoints;
 };
 
-inline CanvasScribble::CanvasScribble(EasyGraphics * currentInterface, BoundingArea * shapeArea, int outlineColour, vector<Point> points) : CanvasShape(currentInterface, shapeArea, 0, outlineColour)
+inline CanvasScribble::CanvasScribble(EasyGraphics * currentInterface, int x, int y, int x1, int y1, int shapeType, int outlineColour, vector<Point> points) : CanvasShape(currentInterface, x, y, x1, y1, shapeType, 0, outlineColour)
 {
 	// We then take into account the bouding box and negate the top left coords so we can move the scribble with respect to the bouding box.
 	for (vector<Point>::iterator p = points.begin(); p < points.end(); p++) {
@@ -32,6 +32,10 @@ inline CanvasScribble::CanvasScribble(EasyGraphics * currentInterface, BoundingA
 			p->y - area->getY()
 			});
 	}
+}
+
+inline CanvasScribble::~CanvasScribble()
+{
 }
 
 inline void CanvasScribble::onRender()

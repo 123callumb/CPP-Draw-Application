@@ -1,7 +1,7 @@
 #include "Interface.h"
 
 
-Interface::Interface(HINSTANCE hInstance) : hInst(hInstance)
+Interface::Interface(HINSTANCE hInstance) : hInst(hInstance), canvas(Canvas(this)), controlMenu(MenuUI(this)), tools(Tools(this, &canvas, hInst))
 {
 	setImmediateDrawMode(false);
 
@@ -10,6 +10,13 @@ Interface::Interface(HINSTANCE hInstance) : hInst(hInstance)
 
 Interface::~Interface()
 {
+}
+
+void Interface::onClose()
+{
+	canvas.onClose();
+	tools.onClose();
+	controlMenu.onClose();
 }
 
 void Interface::onCreate()

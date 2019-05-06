@@ -7,8 +7,8 @@ using namespace std;
 class Control : public Element
 {
 public:
-	Control(EasyGraphics *currentInterface, BoundingArea * bArea, const wchar_t *filename, const wchar_t *filenameSelected, int ID);
-	~Control();
+	Control(EasyGraphics *currentInterface, int x, int y, int x1, int y1, int shapeType, const wchar_t *filename, const wchar_t *filenameSelected, int ID);
+	virtual ~Control();
 protected:
 	bool selected = false;
 	const wchar_t *image, *imageHover;
@@ -17,7 +17,7 @@ protected:
 	virtual void onClick(int x, int y), onRender(); // Overwriting these from element class.
 };
 
-inline Control::Control(EasyGraphics *currentInterface, BoundingArea * bArea, const wchar_t *filename, const wchar_t *filenameSelected, int ID) : Element(currentInterface, bArea), image(filename), imageHover(filenameSelected), controlID(ID)
+inline Control::Control(EasyGraphics *currentInterface, int x, int y, int x1, int y1, int shapeType, const wchar_t *filename, const wchar_t *filenameSelected, int ID) : Element(currentInterface, x, y, x1, y1, shapeType), image(filename), imageHover(filenameSelected), controlID(ID)
 {
 }
 

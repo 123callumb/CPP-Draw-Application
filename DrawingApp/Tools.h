@@ -21,7 +21,7 @@ class Tools
 public:
 	Tools(EasyGraphics * currentInterface, Canvas * currentCanvas, HINSTANCE currentInstance);
 	~Tools();
-	void currentToolMovement(int x, int y), currerntToolDown(int x, int y), currrentToolUp(int x, int y), renderCurrrentToolIcon(), renderCurrentToolGraphics();
+	void currentToolMovement(int x, int y), currerntToolDown(int x, int y), currrentToolUp(int x, int y), renderCurrrentToolIcon(), renderCurrentToolGraphics(), onClose();
 private:
 	int currentToolID = 0;
 	EasyGraphics * ui;

@@ -1,12 +1,16 @@
 #include "ControlExpand.h"
 
 
-ControlExpand::ControlExpand(Control initialControl) : Control(initialControl)
+ControlExpand::ControlExpand(EasyGraphics * currentInterface, int x, int y, int x1, int y1, int shapeType, const wchar_t * imageFile, const wchar_t * imageHover) : Control(currentInterface, x, y, x1, y1, shapeType, imageFile, imageHover, -1)
 {
 }
 
 ControlExpand::~ControlExpand()
 {
+	for_each(controlList.begin(), controlList.end(), [](Control * subControl) {
+		delete subControl;
+	});
+	controlList.erase(controlList.begin(), controlList.end());
 }
 
 void ControlExpand::addControl(Control * subControl)

@@ -1,6 +1,6 @@
 #include "CanvasShape.h"
 
-CanvasShape::CanvasShape(EasyGraphics * currentInterface, BoundingArea * shapeArea, int fillColour, int outlineColour) : Element(currentInterface, shapeArea), fillColour(fillColour), outlineColour(outlineColour)
+CanvasShape::CanvasShape(EasyGraphics * currentInterface, int x, int y, int x1, int y1, int shapeType, int fillColour, int outlineColour) : Element(currentInterface, x, y, x1, y1, shapeType), fillColour(fillColour), outlineColour(outlineColour)
 {
 }
 

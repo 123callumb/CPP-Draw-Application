@@ -73,7 +73,7 @@ void ShapeTool::createShape()
 {
 	// This stops the drawing of 0px objects 
 	if (s[0] != e[0] && s[1] != e[1]) {
-		canvas->addToCanvas(new BoundingArea(s[0], s[1], e[0], e[1], shapeType), GlobalSettings::getInstance()->getFillColour(), GlobalSettings::getInstance()->getOutlineColour());
+		canvas->addToCanvas(s[0], s[1], e[0], e[1], shapeType, GlobalSettings::getInstance()->getFillColour(), GlobalSettings::getInstance()->getOutlineColour());
 	}
 }
 

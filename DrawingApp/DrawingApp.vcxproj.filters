@@ -75,9 +75,6 @@
     <ClInclude Include="CanvasScribble.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ActionTool.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ColourPicker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -102,9 +99,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MenuUI.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Tools.cpp">
@@ -144,9 +138,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PenTool.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ActionTool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ColourPickerUI.cpp">
