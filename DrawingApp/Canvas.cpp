@@ -100,7 +100,7 @@ const vector<CanvasShape*> Canvas::getCanvasElements()
 
 void Canvas::onClose()
 {
-	for_each(canvasElements.begin(), canvasElements.end(), [](Element * p) {
+	for_each(canvasElements.begin(), canvasElements.end(), [](CanvasShape * p) {
 		delete p;
 	});
 	canvasElements.erase(canvasElements.begin(), canvasElements.end());

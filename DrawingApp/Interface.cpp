@@ -17,6 +17,7 @@ void Interface::onClose()
 	canvas.onClose();
 	tools.onClose();
 	controlMenu.onClose();
+	GlobalSettings::getInstance()->onClose();
 }
 
 void Interface::onCreate()

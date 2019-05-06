@@ -64,9 +64,18 @@ void MoveTool::renderGraphics()
 		UI->drawRectangle(0, 0, 240, 30, true);
 		UI->selectTextColour(UI->clWhite);
 		UI->drawText(L"Shift is down, multiselect mode enabled.", 5, 5);
-		UI->selectBackColour(GlobalSettings::getInstance()->getFillColour());
-		UI->setPenColour(GlobalSettings::getInstance()->getOutlineColour(), 2);
+
 	}
+	else {
+		UI->selectBackColour(UI->clDarkGrey);
+		UI->setPenColour(UI->clBlack, 2);
+		UI->drawRectangle(0, 0, 240, 30, true);
+		UI->selectTextColour(UI->clWhite);
+		UI->drawText(L"Hold Shift for multi select.", 5, 5);
+	}
+
+	UI->selectBackColour(GlobalSettings::getInstance()->getFillColour());
+	UI->setPenColour(GlobalSettings::getInstance()->getOutlineColour(), 2);
 
 	// render selected area around shapes
 	UI->setPenColour(UI->clDarkGrey, 1);
