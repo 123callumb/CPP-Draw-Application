@@ -259,5 +259,8 @@
     <Image Include="Btn_Up.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="Btn_Down.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

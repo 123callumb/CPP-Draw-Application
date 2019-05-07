@@ -199,6 +199,7 @@
     <Image Include="Btn_Bin_Hover.bmp" />
     <Image Include="Btn_Circle.bmp" />
     <Image Include="Btn_Circle_Hover.bmp" />
+    <Image Include="Btn_Down.bmp" />
     <Image Include="Btn_Fill.bmp" />
     <Image Include="Btn_FillColour.bmp" />
     <Image Include="Btn_FillColour_Hover.bmp" />

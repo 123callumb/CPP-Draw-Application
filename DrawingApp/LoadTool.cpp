@@ -17,9 +17,9 @@ void LoadTool::onClickDown(int x, int y)
 		if (savedFile.is_open() && !savedFile.fail()) {
 			// Empty Current Canvas
 			canvas->clear();
-			while (!savedFile.eof()) {
-				int shapeType, fColour, oColour, xPos, yPos, xPos1, yPos1;
-				savedFile >> shapeType >> fColour >> oColour >> xPos >> yPos >> xPos1 >> yPos1;
+			int shapeType, fColour, oColour, xPos, yPos, xPos1, yPos1;
+			while (savedFile >> shapeType >> fColour >> oColour >> xPos >> yPos >> xPos1 >> yPos1) {
+				
 				if (shapeType == BoundingArea::SCRIBBLE) {
 					int pointCount;
 					savedFile >> pointCount;

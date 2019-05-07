@@ -15,7 +15,7 @@ void LayerUI::render()
 {	
 	// Create base for layers to sit on
 	UI->drawBitmap(L"Btn_Up.bmp", 1010 - LayerBox::LAYER_W, 80, LayerBox::LAYER_W, 20, UI->clWhite);
-	UI->drawBitmap(L"Btn_Up.bmp", 1010 - LayerBox::LAYER_W, 100 + LayerBox::LAYER_H * 8, LayerBox::LAYER_W, 20, UI->clWhite);
+	UI->drawBitmap(L"Btn_Down.bmp", 1010 - LayerBox::LAYER_W, 100 + LayerBox::LAYER_H * 8, LayerBox::LAYER_W, 20, UI->clWhite);
 	UI->selectBackColour(UI->clDarkGrey);
 	UI->setPenColour(UI->clBlack, 1);
 	UI->drawRectangle(1010 - LayerBox::LAYER_W, 100, LayerBox::LAYER_W, LayerBox::LAYER_H * viewableLayers, true);
@@ -27,6 +27,10 @@ void LayerUI::render()
 
 void LayerUI::onLDown(int x, int y)
 {
+	// This is a simple way to navigate the layers bar.
+	startingIndex = (x > 950) && (x < 1024) && (y > 80) && (y < 100) && (startingIndex != 0) ? startingIndex - 1 : startingIndex;
+	startingIndex = (x > 950) && (x < 1024) && (y > 500) && (y < 520) && ((startingIndex + viewableLayers) < canvas->getCanvasElements().size()) ? startingIndex + 1 : startingIndex;
+
 	for (size_t i = 0; i < layers.size(); i++) {
 		layers.at(i)->click(x, y);
 	}
@@ -69,7 +73,7 @@ void LayerUI::updateLayers()
 	vector<CanvasShape*> currentShapes = canvas->getCanvasElements();
 	size_t loopAmount = currentShapes.size() < viewableLayers ? currentShapes.size() : viewableLayers;
 	
-	for (size_t i = startingIndex; i <  loopAmount; i++) {
-			layers.push_back(new LayerBox(UI, 1010 - LayerBox::LAYER_W, 100 + (i * LayerBox::LAYER_H), currentShapes.at(i)->getBoudingArea()->getShapeType(), i));
+	for (size_t i = startingIndex; i < (startingIndex + loopAmount); i++) {
+		layers.push_back(new LayerBox(UI, 1010 - LayerBox::LAYER_W, 100 + ((i - startingIndex) * LayerBox::LAYER_H), currentShapes.at(i)->getBoudingArea()->getShapeType(), i));
 	}
 }
