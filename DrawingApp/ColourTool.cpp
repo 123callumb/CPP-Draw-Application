@@ -28,6 +28,13 @@ void ColourTool::onClickUp(int x, int y)
 
 void ColourTool::renderGraphics()
 {
+	UI->selectBackColour(UI->clDarkGrey);
+	UI->setPenColour(UI->clBlack, 2);
+	UI->drawRectangle(0, 0, 200, 30, true);
+	UI->selectTextColour(UI->clWhite);
+	UI->drawText(L"Click a Shape to Fill it in.", 5, 5);
+	UI->selectBackColour(GlobalSettings::getInstance()->getFillColour());
+	UI->setPenColour(GlobalSettings::getInstance()->getOutlineColour(), 2);
 }
 
 void ColourTool::onMove(int x, int y)

@@ -2,7 +2,7 @@
 #include "Tool.h"
 #include <fstream>
 #include "CanvasShape.h"
-
+/// Class for loading hard coded file.
 class LoadTool :
 	public Tool
 {

@@ -18,10 +18,11 @@ public:
 private:
 	HINSTANCE hInst;
 
-	Canvas canvas;
-	MenuUI controlMenu;
-	Tools tools;
-	LayerUI layerPanel;
+	// Everything is link together between these four objects.
+	Canvas canvas; // Stuff with shapes on
+	MenuUI controlMenu; // Controls to be pressed
+	Tools tools; // Actual interaction/use of tool
+	LayerUI layerPanel; // Layers of canvas
 
 	void onCreate();
 	void onDraw();

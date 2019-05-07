@@ -5,6 +5,7 @@
 #include <algorithm>
 #include "CanvasShape.h"
 #include "LayerBox.h"
+// Layer menu on right hand side
 
 class LayerUI
 {

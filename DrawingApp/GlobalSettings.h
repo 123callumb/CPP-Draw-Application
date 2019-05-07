@@ -1,7 +1,7 @@
 #pragma once
 #include "EasyGraphics.h"
 
-// This is a singleton class that stores the current values of current colours and selected tools.
+// This is a singleton class that stores the current values of current colours and selected tools and key listeners.
 class GlobalSettings
 {
 public:

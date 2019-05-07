@@ -46,7 +46,7 @@ void LayerUI::onLUp(int x, int y)
 	if (selectedLayer > -1 && y > 100 && y < 500) {
 		// Current mid point of selected box
 		int newPosition = ((y - y % 50) - 100) / 50;
-		canvas->rearangePosition(selectedLayer + startingIndex, newPosition + startingIndex);
+		canvas->rearangePosition(selectedLayer, newPosition + startingIndex);
 	}
 
 	GlobalSettings::getInstance()->setSelectedLayer(-1);
@@ -74,6 +74,6 @@ void LayerUI::updateLayers()
 	size_t loopAmount = currentShapes.size() < viewableLayers ? currentShapes.size() : viewableLayers;
 	
 	for (size_t i = startingIndex; i < (startingIndex + loopAmount); i++) {
-		layers.push_back(new LayerBox(UI, 1010 - LayerBox::LAYER_W, 100 + ((i - startingIndex) * LayerBox::LAYER_H), currentShapes.at(i)->getBoudingArea()->getShapeType(), i));
+		layers.push_back(new LayerBox(UI, 1010 - LayerBox::LAYER_W, 100 + (((int)i - startingIndex) * LayerBox::LAYER_H), currentShapes.at(i)->getBoudingArea()->getShapeType(), (int)i));
 	}
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include "Tool.h"
+// Tool for deleting canvas elements
 class DeleteTool :
 	public Tool
 {

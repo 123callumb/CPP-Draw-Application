@@ -2,14 +2,14 @@
 
 MenuUI::MenuUI(EasyGraphics *currrentUI)  : ui(currrentUI)
 {
-	// SHAPES BUTTON
+	// SHAPES BUTTON is an expandable button which i wanted to do more with but I may not get time.
 	ControlExpand *shapesExpandButton = new ControlExpand(ui, 0, controlH, controlW, controlH*2, BoundingArea::RECT, controlTextures[0], controlTextures[1]);
 	for (size_t i = 2; i < 8; i+=2)
-		shapesExpandButton->addControl(new Control(ui, controlW * (i/2), controlH, (controlW * (i/2)) + controlW, controlH * 2, BoundingArea::RECT, controlTextures[i], controlTextures[i+1], i/2 - 1));
+		shapesExpandButton->addControl(new Control(ui, controlW * ((int)i/2), controlH, (controlW * ((int)i/2)) + controlW, controlH * 2, BoundingArea::RECT, controlTextures[i], controlTextures[i+1], (int)i/2 - 1));
 	controls.push_back(shapesExpandButton); 
 
 	for (size_t i = 8; i < 26; i+=2)
-		controls.push_back(new Control(ui, 0, (controlH * ((i/2) -2)), controlW, ((controlH * ((i/2) - 2)) + controlH), BoundingArea::RECT, controlTextures[i], controlTextures[i + 1], i/2 - 1));
+		controls.push_back(new Control(ui, 0, (controlH * (((int)i/2) -2)), controlW, ((controlH * (((int)i/2) - 2)) + controlH), BoundingArea::RECT, controlTextures[i], controlTextures[i + 1], (int)i/2 - 1));
 }
 
 

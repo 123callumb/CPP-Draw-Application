@@ -1,7 +1,7 @@
 #pragma once
 #include "Element.h"
 #include "CanvasShape.h"
-
+// Layer box
 class LayerBox :
 	public Element
 {

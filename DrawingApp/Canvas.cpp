@@ -106,6 +106,7 @@ void Canvas::onClose()
 	canvasElements.erase(canvasElements.begin(), canvasElements.end());
 }
 
+// For rearanging for the layers 
 void Canvas::rearangePosition(int oldIndex, int newIndex)
 {
 	CanvasShape * shape = canvasElements.at(oldIndex);
