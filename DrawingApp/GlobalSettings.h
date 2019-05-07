@@ -6,9 +6,9 @@ class GlobalSettings
 {
 public:
 	inline static GlobalSettings * getInstance();
-	inline int getFillColour(), getOutlineColour(), getControl();
+	inline int getFillColour(), getOutlineColour(), getControl(), getSelectedLayer();
 	inline bool isShiftDown();
-	void setFillColour(int colour), setOutlineColour(int colour), setControlID(int controlID), setShiftDown(bool value), onClose();
+	void setFillColour(int colour), setOutlineColour(int colour), setControlID(int controlID), setShiftDown(bool value), onClose(), setSelectedLayer(int v);
 private:
 	GlobalSettings();
 	~GlobalSettings();
@@ -18,6 +18,7 @@ private:
 	int currentOutlineColour = EasyGraphics::clBlack;
 	int currentControlID = 0; // set as draw rectangle as defualt.
 	bool shiftDown = false;
+	int selectedLayer = -1;
 };
 
 
@@ -45,6 +46,11 @@ inline int GlobalSettings::getOutlineColour()
 inline int GlobalSettings::getControl()
 {
 	return currentControlID;
+}
+
+inline int GlobalSettings::getSelectedLayer()
+{
+	return selectedLayer;
 }
 
 inline bool GlobalSettings::isShiftDown()
@@ -87,3 +93,9 @@ inline void GlobalSettings::onClose()
 	LeaveCriticalSection(&lock);
 }
 
+inline void GlobalSettings::setSelectedLayer(int v)
+{
+	EnterCriticalSection(&lock);
+	selectedLayer = v;
+	LeaveCriticalSection(&lock);
+}

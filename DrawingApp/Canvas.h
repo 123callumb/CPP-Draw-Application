@@ -15,7 +15,7 @@ public:
 	Canvas(EasyGraphics * currentInterface);
 	~Canvas();
 	void addToCanvas(int x, int y, int x1, int y1, int shapeType, int fillColour, int outlineColour), addScribble(vector<CanvasScribble::Point> points, int x, int y, int x1, int y1, int shapeType, int outlineColour);
-	void render(), moveShape(int shapeIndex, int x, int y, int dxy[3]), fillShape(int shapeIndex), fillOutline(int shapeIndex), deleteShape(int shapeIndex), clear(), onClose();
+	void render(), moveShape(int shapeIndex, int x, int y, int dxy[3]), fillShape(int shapeIndex), fillOutline(int shapeIndex), deleteShape(int shapeIndex), clear(), onClose(), rearangePosition(int oldIndex, int newIndex);
 	bool shapeExistsAt(int x, int y);
 	int getShapeIndexAt(int x, int y);
 	const vector<CanvasShape*> getCanvasElements();

@@ -4,6 +4,7 @@
 #include "Tools.h"
 #include "Canvas.h"
 #include "GlobalSettings.h"
+#include "LayerUI.h"
 
 using namespace std;
 
@@ -20,6 +21,7 @@ private:
 	Canvas canvas;
 	MenuUI controlMenu;
 	Tools tools;
+	LayerUI layerPanel;
 
 	void onCreate();
 	void onDraw();

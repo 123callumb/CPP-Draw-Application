@@ -105,3 +105,10 @@ void Canvas::onClose()
 	});
 	canvasElements.erase(canvasElements.begin(), canvasElements.end());
 }
+
+void Canvas::rearangePosition(int oldIndex, int newIndex)
+{
+	CanvasShape * shape = canvasElements.at(oldIndex);
+	canvasElements.erase(canvasElements.begin() + oldIndex);
+	canvasElements.insert(canvasElements.begin() + newIndex, shape);
+}

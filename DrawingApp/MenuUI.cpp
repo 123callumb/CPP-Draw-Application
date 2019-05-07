@@ -22,6 +22,14 @@ void MenuUI::onDraw()
 {
 	for (size_t i = 0; i < controls.size(); i++)
 		controls.at(i)->render();
+
+	// Drawing the current chosen colour here, no need for button etc.
+	ui->setPenColour(GlobalSettings::getInstance()->getFillColour(), 1);
+	ui->selectBackColour(GlobalSettings::getInstance()->getFillColour());
+	ui->drawRectangle(20, 509, 28, 27, true);
+	ui->setPenColour(GlobalSettings::getInstance()->getOutlineColour(), 6);
+	ui->drawLine(25, 586, 42, 569);
+	ui->setPenColour(GlobalSettings::getInstance()->getOutlineColour(), 2);
 }
 
 // Add click interactions to control buttons

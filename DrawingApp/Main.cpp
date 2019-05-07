@@ -8,7 +8,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 {
  //I have so many memeory leaks, I don't even know what half of them are caused by. I ran out of time.
 #ifdef _DEBUG   // only include this section of code in the DEBUG build
-	_CrtSetBreakAlloc(310);  // really useful line of code to help find memory leaks
+	//_CrtSetBreakAlloc(310);  // really useful line of code to help find memory leaks
 	_onexit(_CrtDumpMemoryLeaks); // check for memory leaks when the program exits
 #endif
 

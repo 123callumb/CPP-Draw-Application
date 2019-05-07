@@ -75,14 +75,10 @@ void MoveTool::renderGraphics()
 	}
 
 	UI->selectBackColour(GlobalSettings::getInstance()->getFillColour());
-	UI->setPenColour(GlobalSettings::getInstance()->getOutlineColour(), 2);
 
 	// render selected area around shapes
 	UI->setPenColour(UI->clDarkGrey, 1);
-	UI->drawLine(selectedBounds.getX() - 10, selectedBounds.getY() - 10, selectedBounds.getX1() + 10, selectedBounds.getY() - 10);
-	UI->drawLine(selectedBounds.getX1() + 10, selectedBounds.getY1() + 10, selectedBounds.getX() - 10, selectedBounds.getY1() + 10);
-	UI->drawLine(selectedBounds.getX() - 10, selectedBounds.getY() - 10, selectedBounds.getX() - 10, selectedBounds.getY1() + 10);
-	UI->drawLine(selectedBounds.getX1() + 10, selectedBounds.getY() - 10, selectedBounds.getX1() + 10, selectedBounds.getY1() + 10);
+	UI->drawRectangle(selectedBounds.getX() - 10, selectedBounds.getY() - 10, selectedBounds.getX1() - selectedBounds.getX() + 20, selectedBounds.getY1() - selectedBounds.getY() + 20, false);
 	UI->setPenColour(GlobalSettings::getInstance()->getOutlineColour(), 2);
 }
 
